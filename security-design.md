@@ -1,0 +1,18 @@
+---
+
+copyright:
+  years: 2024
+lastupdated: "2024-06-17"
+
+subcollection: <repo-name>
+
+keywords:
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
+# Security design
+{: #security-design}
+
+

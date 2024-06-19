@@ -17,7 +17,6 @@ keywords:
 
 
 
-## Architecture Decisions for Compute
 
 | **Architecture decision**                   | **Requirement**                                               | **Alternatives**  | **Decision**                 | **Rationale**                                                                                                                                                                                                          |
 |---------------------------------------------|---------------------------------------------------------------|-------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -25,6 +24,5 @@ keywords:
 | Compute:  GRS Controllers                   | Provide compute for replication components.                   | Not Applicable    | Power Virtual Server LPAR(s) | Compute for GRS controller workloads                                                                                                                                                                                   |
 | Compute: Edge and Management VPCs           | Provide compute for workloads in the edge and management VPCs | Not Applicable    | Virtual Servers for VPC      | Virtual servers for workloads in the Edge and Management VPCs                                                                                                                                                          |
 | Compute: Disaster Recovery Workloads        | Provide compute for LPARs supporting disaster recovery.       | Not Applicable    | Power Virtual Server LPAR(s) | Target an environment to match specific workload requirements. Consider Shared Processor Pool configuration as an option to provision the disaster recovery environment at the lowest possible compute configuration.  |
-
-
+{: caption="Table 2. Architecture decisions for compute" caption-side="bottom"}
 

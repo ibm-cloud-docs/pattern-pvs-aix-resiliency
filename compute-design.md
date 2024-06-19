@@ -25,6 +25,7 @@ The requirements for the compute aspect for the Resiliency for PowerVS AIX workl
 -   The compute required to support high availability activities.
 
 ## Compute Considerations for Backups
+{: #design-considerations-backups}
 
 Backup Methodology: **Secure Automated Backup with Compass**
 
@@ -37,8 +38,6 @@ Backup Methodology: **Secure Automated Backup with Compass**
 Local OS High Availability Methodology: **PowerHA Standard**
 
 -   Adequate LPAR compute for clustered AIX LPARs in one IBM Cloud datacenter for local HA.
-
-## 
 
 ## Compute Considerations for Disaster Recovery
 

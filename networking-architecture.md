@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-06-19"
 
 subcollection: <repo-name>
 
@@ -17,81 +17,68 @@ keywords:
 
 
 
-The following tables summarize the networking architecture decisions for the web app multi-zone resiliency pattern.
 
-## Architecture decisions for enterprise connectivity
-{: #enterprise-connectivity}
+| **Architecture decision**      | **Requirement**                                                                                   | **Alternatives**                                                  | **Decision**                                               | **Rationale**                                                                                                                                                                                                                                                                                                                                                  |
+|--------------------------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BYOIP/Edge Gateway             | Capability that is needed for customers to provide isolation, security, and edge routing services | Edge Gateways:  Palo Alto, Fortinet, F5 with the client choice    | Gateway: Client choice   IBM Cloud VPC facilitates BYOIP   | Edge Gateway is client choice based on the requirements Client can [bring their own subnet](https://cloud.ibm.com/docs/vpc?topic=vpc-configuring-address-prefixes) IP address range to an IBM Cloud® Virtual Private Cloud GRE (Generic Routing Encapsulation) Tunnel connecting the PowerVS to VPC for routes to be advertised across on-premises environment |
+| Network Segmentation/Isolation | Deploy workloads in an isolated environment and enforce information flow policies.                | Subnets, Security Groups, ACLs, Workspaces                        | VPCs and subnets Separate PowerVS LPARs                    | Native VPC isolation by using separate VPCs and subnets environments for separation of workload PowerVS isolation                                                                                                                                                                                                                                              |
 
-The following are architecture decisions for enterprise connectivity for this design.
+-   Security group with inbound rule, address prefix, and subnet for Secure Automated Backup with Compass.
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Management connectivity | Provide secure, encrypted connectivity to the cloud’s private network for management purposes. | text | text | text. |
-| Enterprise connectivity | Provide connectivity between client enterprise and IBM Cloud. | text | text | text. |
-{: caption="Table 1. Architecture decisions for enterprise connectivity" caption-side="bottom"}
+Cloud Native Connectivity (to cloud services)
 
-## Architecture decisions for BYOIP and Edge Gateways
-{: #byoip-edge-gateways}
+Provide secure connection to Cloud Services
 
-The following are network BYOIP and edge gateay architecture decisions for this design.
+VPC Gateway + Virtual Private Endpoints (VPE)
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| BYOIP approach | Provide capability for bring your own IP (BYOIP) to IBM Cloud. | text | text | text |
-| Edge gateways | Capability to provide edge routing services and possible tunnel termination. | text | text | text |
-{: caption="Table 2. Architecture decisions for bring your own IP and edge gateways" caption-side="bottom"}
+Private Cloud Service endpoints
 
-## Architecture decisions for network segmentation and isolation
-{: #network-segmentation-isolation}
+Public Cloud Service Endpoints
 
-The following are network segmentation and isolation architecture decisions for this design.
+VPC Gateway + Virtual Private Endpoints (VPE)
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Network segmentation and isolation | Ability to provide network isolation across workloads. | text | text | text |
-{: caption="Table 3. Architecture decisions for network segmentation and isolation" caption-side="bottom"}
+-   VPC Gateway + Virtual Private Endpoints enable connectivity to IBM Cloud services by using private IP addresses allocated from a VPC subnet.
 
-## Architecture decisions for cloud native connectivity
-{: #cloud-native-connectivity}
+Cloud Landing-zone Connectivity
 
-The following are cloud native connectivity architecture decisions for this design.
+Connect across multiple VPCs and to IBM Cloud Classic, PowerVS environments
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Cloud native connectivity (to cloud services) | Provide secure connection to Cloud Services | * VPC Gateway + Virtual Private Endpoints (VPE) \n * Private Cloud Service endpoints \n * Public Cloud Service Endpoints | text | text |
-| Multi-landing zone connectivity | Connect two or more VPCs over a private network /n Connectectivity between classic, VPCs and/or Power Virutal Server| * Global Transit Gateway \n * Local Transit Gateway (TGW) | text | text |
-{: caption="Table 4. Architecture decisions for cloud native connectivity" caption-side="bottom"}
+Transit Gateway (TGW)
 
-## Architecture decisions for load balancing
-{: #network-load-balancing}
+Power Edge Router (PER)
 
-The following are load balancing architecture decisions for this design.
+Global Transit Gateway (GTGW)
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Global load balancing | Load balancing over the public network across two regions in the event of an outage (DR) for failover to the other region. | text | text |text|
-| Load balancing (public) | Load balancing workloads across multiple workload instances or zones over the public network. | text | text |text|
-| Load balancing (private) | Load balancing workloads across multiple workload instances or zones over the private network. | text | text |text|
-{: caption="Table 5. Architecture decisions for load balancing" caption-side="bottom"}
+Transit Gateway
 
-## Architecture decisions for content delivery network
-{: #network-content delivery network}
+Power Edge Router (PER)
 
-The following are content delivery network architecture decisions for this design.
+-   Transit gateways (TGW) are used for interconnectivity between PowerVS and VPCs. Transit Gateways have built in redundancy. TGWs are regional and are deployed 2 per AZ within the same region.
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Content delivery network | Provide ability to cache frequently accessed content at location nearest to the user | text | text | text |
-{: caption="Table 6. Architecture decisions for content delivery network" caption-side="bottom"}
+-   Power Edge Routers (PER) are also deployed as 2 per region. PER is used for interconnectivity between PowerVS and the TGW. For more information see getting started with PER https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-per
 
+Cloud Landing-zone Connectivity across regions
 
-## Architecture decisions for domain name system
-{: #dns}
+Connect across regions
 
-The following are domain name system (DNS) architecture decisions for this design.
+Global Transit Gateway (GTGW)
 
-| Architecture decision | Requirement | Option | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Public DNS | Provide DNS resolution to support the use of hostnames instead of IP addresses for applications | text | text | text |
-| Private DNS | Provide DNS resolution within IBM Cloud's private network | text| text | text |
-{: caption="Table 7. Architecture decisions for domain name system" caption-side="bottom"}
+Global Transit Gateway (GTGW)
+
+-   interconnects classic, VPCs and PowerVS resources across regions.
+
+-   connect to environments in other regions for resiliency data replication purposes.
+
+Domain Name System (DNS)
+
+Ability to resolve DNS names on site
+
+IBM Cloud DNS
+
+IBM continues to forward or relay the DNS to client DNS Servers onsite
+
+IBM continues to forward or relay the DNS to client DNS Servers onsite
+
+-   This is the default option in the absence of a specific customer requirement to manage DNS
+
+-   Name resolution for the backup server connections is required.

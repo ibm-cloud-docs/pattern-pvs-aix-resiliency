@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-06-19"
 
 subcollection: <repo-name>
 
@@ -38,9 +38,96 @@ content-type: reference-architecture
 
 
 
-Include a short description, summary, or overview in a single paragraph that follows the title.
 
-After the introduction, include a summary of the typical use case for the architecture. The use case might include the motivation for the architecture composition, business challenge, or target cloud environments.
+
+This is a baseline solution pattern containing the design and architecture decisions for a PowerVS resiliency solution for AIX workloads to meet common requirements as noted in this use case. Actual solutions depend on the specific requirements that are set by the client. Below is a summary of the use case for this reference architecture:
+
+![](13bf14fbf3a3c8d6ab330529aced2ca9.png)
+
+Figure X: Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server
+
+## Architecture Diagram
+
+![](945b2b29becc276207e96ccd02a4432d.png)
+
+![](5c764216c16fcc02f2d7b0d7bdb6a6cd.png)
+
+![](2a66ddf06756f3e6b9c00dbed09c72e8.png)
+
+Figure X: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture
+
+Environments related to this reference architecture:
+
+-   Primary Environment – added to the primary datacenter
+
+    -   BaaS VPC deployed as part of the backup service automation; not for workloads
+
+-   Secondary IBM Cloud datacenter for disaster recovery workloads
+
+    -   Edge VPC for firewall
+
+    -   Management VPC for management tool stacks to manage VPC, PowerVS environments
+
+    -   PowerVS Environment - workload PowerVS workspace, workload/GRS controller LPARs
+
+## Design Scope
+
+The PowerVS resiliency for AIX workloads architecture covers design considerations and architecture decisions for the following aspects and domains (as defined in the [Architecture Design Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro)):
+
+-   Compute: Virtual Servers
+
+-   Storage: Primary Storage, Backup Storage, Archive Storage
+
+-   Networking: Enterprise Connectivity, BYOIP/Edge gateways, Segmentation, Isolation, Cloud Native Connectivity, Domain name system
+
+-   Security: Data security, Identity and access management, Infrastructure and endpoint security
+
+-   Resiliency: Backups and Restore, High Availability, Disaster Recovery
+
+The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. See [Introduction to the Architecture Design Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro) for more details.
+
+Following the Architecture Design Framework, Resiliency for PowerVS covers design considerations and architecture decisions for the following aspects and domains:
+
+![](6d17f81955f76621d66bf28354e36d8d.png)
+
+Figure x Resiliency for PowerVS AIX Workloads heat map
+
+## Requirements
+
+| **Aspect**         | **Requirements**                                                                                                                                                                                                                                                                                  |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Compute            | Provide CPU and RAM to support resiliency components.                                                                                                                                                                                                                                             |
+| Storage            | Provide storage to support replication activities. Provide storage to support customer retention schedules.                                                                                                                                                                                       |
+| Networking         | Provide enterprise to cloud network connectivity to recovery site.  Provide private connectivity between workloads across protected and recovery sites. Deploy workloads in an isolated environment and enforce information flow policies. Provide BYOIP, Edge Routing, VLAN segmentation and DNS |
+| Security           | Ensure data encryption at rest and in transit for the storage layer. Protect the boundaries of the application against denial-of-service and application-layer attacks.                                                                                                                           |
+| Resiliency         | Provide local OS level high availability between two AIX LPARs  Provide backups for data retention for AIX workloads. Recovery Time Objective (RTO) and Recovery Point Objective(/RPO) = 1 hours/1 hours.  99.99% Infrastructure Availability                                                     |
+| Service Management | Monitor the usage and performance of the resiliency components                                                                                                                                                                                                                                    |
+
+Table 1. Resiliency for PowerVS requirements
+
+## 
+
+## Components
+
+| **Category**       | **Solution Components**                                                                                                       | **How it is used in solution**                                                                                                      |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Compute            | PowerVS LPARs                                                                                                                 | High Availability workload virtual servers  Disaster Recovery workload virtual servers Global Replication Service (GRS) Controllers |
+|                    | VPC VSI                                                                                                                       | Compute for NFGW, Management Tools                                                                                                  |
+| Storage            | Flash storage from IBM FS9500 series devices                                                                                  | Web, Application, Database storage Storage for GRS                                                                                  |
+|                    | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Long term backup archive, logs                                                                                                      |
+| Networking         | IBM Cloud Direct Link                                                                                                         | Enterprise to cloud network connectivity                                                                                            |
+|                    | Transit Gateway (TGW)                                                                                                         | Connectivity between PowerVS and VPCs                                                                                               |
+|                    | Service Endpoints                                                                                                             | Private network access to cloud services such IBM Cloud Logs, Cloud Object Storage.                                                 |
+|                    | [Global Transit Gateway (GTGW)](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-about)                       | Provides PowerVS and VPC connectivity in different regions (global routing)                                                         |
+|                    | [DNS Services](https://cloud.ibm.com/docs/dns-svcs?topic=dns-svcs-about-dns-services)                                         | Private DNS resolution                                                                                                              |
+| Security           | Next Generation Firewall (NFGW)                                                                                               | Provide IDS/IPS and edge firewall capabilities                                                                                      |
+| Resiliency         | Secure Automated Backup with Compass                                                                                          | Backups for AIX workloads                                                                                                           |
+|                    | PowerHA Standard                                                                                                              | Local OS level between two LPARS                                                                                                    |
+|                    | Global Replication Service + IBM Toolkit for AIX Full System Replication                                                      | SAN to SAN replication between two IBM cloud data centers                                                                           |
+| Service Management | IBM Cloud Logs IBM Cloud Monitoring                                                                                           | Apps, Audit, and operational logs Monitor platform metrics                                                                          |
+
+Table 2. Resiliency for PowerVS components
+
 
 
 ## Architecture diagram 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-06-19"
 
 subcollection: <repo-name>
 
@@ -16,12 +16,7 @@ keywords:
 # References
 {: #references}
 
-[IBM Cloud Virtual Private Cloud (VPC) Infrastructure environment introduction](/docs/sap?topic=sap-vpc-env-introduction)
+IBM Redbooks High Availability and Disaster Recovery Options for IBM Power Cloud and On-Premises - https://www.redbooks.ibm.com/redpapers/pdfs/redp5656.pdf
 
-[IBM Cloud for SAP Get Started](/docs/sap?topic=sap-get-started)
+IBM Power Virtual Server Guide for IBM AIX and Linux - https://www.redbooks.ibm.com/redbooks/pdfs/sg248512.pdf
 
-[Veeam Plug-ins for Enterprise Applications](https://helpcenter.veeam.com/docs/backup/plugins/overview.html?ver=120)
-
-[Sizing process for SAP Systems](/docs/sap?topic=sap-sizing&interface=ui)
-
-[FAQ -- SAP on IBM Cloud](/docs/sap?topic=sap-faq-ibm-cloud-for-sap)

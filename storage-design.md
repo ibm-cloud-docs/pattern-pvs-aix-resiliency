@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-20"
 
 subcollection: <repo-name>
 
@@ -22,7 +22,7 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 
 -   The storage required to support replication activities for disaster recovery.
 
-## 
+##
 
 ## Storage Considerations for Backups
 
@@ -36,7 +36,7 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 
 -   Storage sizing considerations: workload and data volumes (source total, unstructured and structured), change and growth rates, retention policies.
 
--   Engage Cobalt Iron for sizing - [https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass#about)
+-   [Engage Cobalt Iron for sizing](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about)
 
 -   Ensure that there is sufficient file system space to hold the produced mksysb image. Generally, 10 to 15 GB is sufficient depending on additional non-AIX data added to the rootvg. Consider Cloud Object storage for mksysb images.
 

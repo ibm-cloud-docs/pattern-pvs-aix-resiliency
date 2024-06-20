@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-20"
 
 subcollection: <repo-name>
 
@@ -36,9 +36,9 @@ does not address application or database specific design.
 
 NOTE: Always validate offerings are available in the regions you are deploying via [IBM Cloud portal](https://cloud.ibm.com/login). Check for paired datacenters and validate if they meet the deployment criteria for client specific requirements.
 
-Secure Automated Backup with Compass - The Backup Offering VPC and the Power Virtual Server workspaces should be in the same region and connected using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired datacenters](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-backup-strategies#baas)
+Secure Automated Backup with Compass - The Backup Offering VPC and the Power Virtual Server workspaces should be in the same region and connected using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired datacenters](/docs/power-iaas?topic=power-iaas-backup-strategies#baas)
 
-## Global Replication Services **-** [Locations](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service
+## Global Replication Services **-** [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service
 
 ## Backup Design Considerations
 
@@ -64,13 +64,13 @@ Backup Methodology: **Secure Automated Backup with Compass (+ mksysb)**
 
 -   This third-party product is provided by a vendor outside of IBM and is subject to a separate agreement between you and the third-party if you accept their terms. IBM is not responsible for the product and makes no privacy, security, performance, support, or other commitments regarding the product.
 
--   For sizing and configuration reach out to Cobalt Iron via [support](http://support.cobaltiron.com/) methods found here https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about.
+-   For sizing and configuration reach out to Cobalt Iron via [support](http://support.cobaltiron.com/) methods found [here](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about).
 
--   ROI Estimator can be found here <https://cobaltiron.valuestoryapp.com/savings-calculator/?mediafly_tco_calculator_conversion_source=site-heroslider>.
+-   ROI Estimator can be found [here](https://cobaltiron.valuestoryapp.com/savings-calculator/?mediafly_tco_calculator_conversion_source=site-heroslider).
 
--   Rootvg restore method is required, such as mksysb stored/retrieved from COS. The restored mksysb image applies the AIX configuration details while preserving the Power Virtual Server deployed storage and networking resources. For more information see <https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-restoring-aix-mksysb-image>.
+-   Rootvg restore method is required, such as mksysb stored/retrieved from COS. The restored mksysb image applies the AIX configuration details while preserving the Power Virtual Server deployed storage and networking resources. For more information see [mksysb](/docs/power-iaas?topic=power-iaas-restoring-aix-mksysb-image).
 
--   For more information regarding Secure Automated Backup with Compass see [https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass#about).
+-   For more information regarding Secure Automated Backup see [Compass](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about)
 
 -   Check for Secure Automated Backup with Compass [region availability](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass).
 
@@ -102,7 +102,7 @@ Local OS High Availability Methodology: **PowerHA Standard Edition**
 
 -   For more information on POWERHA see https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-ha-dr
 
--   PowerHA supports resource optimization high availability (ROHA) for AIX instances on PowerVS. This is not discussed in this pattern, however, ROHA is another level of automation built into PowerHA that could be considered. It enables clustered instances to automatically adjustment central processing units (CPUs) and memory resources, which allows organizations to be more efficient in their overall use and consumption of those resources. For more information on configuring and using ROHA with Power Virtual Server, see [Resource Optimized High Availability in Cloud](https://www.ibm.com/docs/en/powerha-aix/7.2?topic=administering-resources-optimized-high-availability-in-cloud) - <https://www.ibm.com/docs/en/powerha-aix/7.2?topic=administering-resources-optimized-high-availability-in-cloud>.
+-   PowerHA supports resource optimization high availability (ROHA) for AIX instances on PowerVS. This is not discussed in this pattern, however, ROHA is another level of automation built into PowerHA that could be considered. It enables clustered instances to automatically adjustment central processing units (CPUs) and memory resources, which allows organizations to be more efficient in their overall use and consumption of those resources. For more information on configuring and using ROHA with Power Virtual Server, see [Resource Optimized High Availability in Cloud](/docs/en/powerha-aix/7.2?topic=administering-resources-optimized-high-availability-in-cloud).
 
 The figure below shows a configuration using PowerHA Standard Edition.
 
@@ -112,7 +112,7 @@ Figure X: Local PowerHA Architecture
 
 In this configuration, both nodes have simultaneous access to the shared disks and own the same disk resources. There is no takeover of shared disks if a node leaves the cluster, since the peer node already has the shared volume group varied on.
 
-## 
+##
 
 ## Disaster Recovery Design
 
@@ -124,7 +124,7 @@ The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default
 
 -   SAN to SAN replication paired between two IBM Power Virtual Server (PowerVS) workspaces in different datacenters.
 
--   Global Replication services (GRS) is based on industry standards IBM Storwize Global Mirror Change Volume Asynchronous replication technology. For more information on getting started with GRS see https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-getting-started-GRS
+-   Global Replication services (GRS) is based on industry standards IBM Storwize Global Mirror Change Volume Asynchronous replication technology. For more information see [getting started with GRS](/docs/power-iaas?topic=power-iaas-getting-started-GRS).
 
 -   The GRS involves two sites, over 300 km apart, where storage replication is enabled. These two sites are fixed and mapped into one-to-one relationship mode in both directions. These two sites are fixed and are in replication partnership in both directions. You can create a replication-enabled volume from any site, the site from where the request is initiated contains the master volume and play the role of master. The remote site is auxiliary and contain an auxiliary volume.
 
@@ -140,8 +140,7 @@ The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default
 
 -   When a write operation is issued to a source volume, the changes are typically propagated to the target volume a few seconds after the data is written to the source volume. However, changes can occur on the source volume before the target volume verifies that it received the change. Because consistent copies of data are formed on the secondary site at set intervals, data loss is determined by the amount of time since the last consistency group was formed. If the system fails, Global Mirror might lose some data that was transmitted when the failure occurred.
 
--   For additional details regarding GRS see [Global Replication Services Solution using IBM Power Virtual Server](https://cloud.ibm.com/media/docs/downloads/power-iaas/Global_Replication_Services_Solution_using_IBM_Power_Virtual_Server.pdf) https://cloud.ibm.com/media/docs/downloads/power-iaas/Global_Replication_Services_Solution_using_IBM_Power_Virtual_Server.pdf
-
+-   For additional details regarding GRS see [Global Replication Services Solution using IBM Power Virtual Server](https://cloud.ibm.com/media/docs/downloads/power-iaas/Global_Replication_Services_Solution_using_IBM_Power_Virtual_Server.pdf)
 -   Consider the IBM Toolkit for AIX from IBM Technology Expert Labs for disaster recovery automation functions and capabilities on the IBM Cloud by integrating PowerVS with the capabilities of GRS. With the Toolkit, simplify and automate operations of the disaster recovery solution. IBM Toolkit for AIX Full System Replication (AIX) enables automate disaster recovery functions and capabilities on the IBM Cloud by integrating PowerVS with the capabilities of GRS. Clients can manage their DR environment using their existing AIX skills. Toolkit functions:
 
     -   Full System Replication for IBM AIX PowerVS
@@ -170,7 +169,7 @@ The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default
 
     -   Handle Data Divergence dominant site
 
--   Validate [datacenter pairings](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-getting-started-GRS) available for global replication service.
+-   Validate [datacenter pairings](/docs/power-iaas?topic=power-iaas-getting-started-GRS) available for global replication service.
 
 The Figure below illustrates the use of GRS as the DR solution between 2 cloud datacenters
 

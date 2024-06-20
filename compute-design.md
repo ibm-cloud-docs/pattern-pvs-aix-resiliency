@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-20"
 
 subcollection: <repo-name>
 
@@ -34,12 +34,17 @@ Backup Methodology: **Secure Automated Backup with Compass**
 -   Compass backup servers are preconfigured in data centers and are also replicated across to the other regions. When a customer provisions the Backup Offering through IBM Cloud catalog, an automation process deploys the Backup Offering, Virtual Private Cloud (VPC) and necessary Virtual Private Endpoints (VPE) to establish secure private network connection to the Compass backup servers. It is highly recommended that you refrain from deploying any additional resources to Backup Offering VPC.
 
 ## Compute Considerations for High Availability
+{: #design-considerations-ha}
 
-Local OS High Availability Methodology: **PowerHA Standard**
+
+Local OS High Availability Methodology:
+
+**PowerHA Standard**
 
 -   Adequate LPAR compute for clustered AIX LPARs in one IBM Cloud datacenter for local HA.
 
 ## Compute Considerations for Disaster Recovery
+{: #design-considerations-dr}
 
 Disaster Recovery Methodology: **Secondary datacenter with Global Replication Service (GRS)**
 
@@ -59,4 +64,4 @@ Disaster Recovery Methodology: **Secondary datacenter with Global Replication Se
 
 -   SPP will allow provisioning the disaster recovery environment at the lowest possible compute configuration. At the time of the DR event, the LPARs are rehydrated from the reserved compute capacity.
 
--   SPP cost optimization by paying for compute capacity when needed. Please note SPP only reserves compute capacity, not the memory. More about SPP can be found here <https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-manage-SPP> and here Managing shared processor pools <https://www.ibm.com/docs/en/power9?topic=systems-managing-shared-processor-pools>
+-   SPP cost optimization by paying for compute capacity when needed. Please note SPP only reserves compute capacity, not the memory. More about SPP can be found [here] (/docs/power-iaas?topic=power-iaas-manage-SPP) and in [Managing shared processor pools](/docs/en/power9?topic=systems-managing-shared-processor-pools)

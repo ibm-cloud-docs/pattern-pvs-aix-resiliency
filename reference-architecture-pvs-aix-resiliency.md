@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-20"
 
-subcollection: pattern-pvs-aix-resiliency 
+subcollection: pattern-pvs-aix-resiliency
 
 keywords:
 
@@ -19,7 +19,7 @@ version: 1.0
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
-docs: /docs/pattern-sap-on-powervs
+docs: /docs/pattern-pvs-aix-resiliency
 
 content-type: reference-architecture
 
@@ -29,8 +29,8 @@ content-type: reference-architecture
 
 
 
-# SAP on VPC 
-{: #sap-on-vpc}
+# Power Virtual Server Resiliency on AIX
+{: #power-virtual-server-on-AIX}
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.0"}
 
@@ -42,19 +42,13 @@ content-type: reference-architecture
 
 This is a baseline solution pattern containing the design and architecture decisions for a PowerVS resiliency solution for AIX workloads to meet common requirements as noted in this use case. Actual solutions depend on the specific requirements that are set by the client. Below is a summary of the use case for this reference architecture:
 
-![](13bf14fbf3a3c8d6ab330529aced2ca9.png)
-
-Figure X: Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server
+![](/images/refarchsummary.svg)
+{: caption="Figure X: Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server" caption-side="bottom"}
 
 ## Architecture Diagram
 
-![](945b2b29becc276207e96ccd02a4432d.png)
-
-![](5c764216c16fcc02f2d7b0d7bdb6a6cd.png)
-
-![](2a66ddf06756f3e6b9c00dbed09c72e8.png)
-
-Figure X: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture
+![](/images/resiliencypvsarch.svg)
+{: caption="Figure X: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}
 
 Environments related to this reference architecture:
 
@@ -105,7 +99,7 @@ Figure x Resiliency for PowerVS AIX Workloads heat map
 
 Table 1. Resiliency for PowerVS requirements
 
-## 
+##
 
 ## Components
 

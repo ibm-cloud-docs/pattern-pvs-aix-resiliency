@@ -4,7 +4,7 @@ copyright:
   years: 2024
 lastupdated: "2024-06-20"
 
-subcollection: <repo-name>
+subcollection: pattern-pvs-aix-resiliency
 
 keywords:
 
@@ -39,7 +39,7 @@ Backup Methodology: **Secure Automated Backup with Compass**
 
 Local OS High Availability Methodology:
 
-**PowerHA Standard**
+## PowerHA Standard
 
 -   Adequate LPAR compute for clustered AIX LPARs in one IBM Cloud datacenter for local HA.
 

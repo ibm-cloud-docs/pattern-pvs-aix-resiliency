@@ -4,7 +4,7 @@ copyright:
   years: 2024
 lastupdated: "2024-06-20"
 
-subcollection: <repo-name>
+subcollection: pattern-pvs-aix-resiliency
 
 keywords:
 
@@ -112,8 +112,6 @@ Figure X: Local PowerHA Architecture
 
 In this configuration, both nodes have simultaneous access to the shared disks and own the same disk resources. There is no takeover of shared disks if a node leaves the cluster, since the peer node already has the shared volume group varied on.
 
-##
-
 ## Disaster Recovery Design
 
 Disaster Recovery Methodology: **Secondary datacenter with Global Replication Service (GRS)**
@@ -174,5 +172,4 @@ The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default
 The Figure below illustrates the use of GRS as the DR solution between 2 cloud datacenters
 
 ![A diagram of a cloud computing system Description automatically generated with medium confidence](9c5f9ed49a38dfebf6d2cef46aa98934.png)
-
-Figure X GRS Architecture
+{: caption="Figure X GRS Architecture" caption-side="bottom"}

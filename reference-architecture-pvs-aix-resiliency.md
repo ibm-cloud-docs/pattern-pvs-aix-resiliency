@@ -47,7 +47,7 @@ This is a baseline solution pattern containing the design and architecture decis
 
 ## Architecture Diagram
 
-![](/images/resiliencypvsarch.svg)
+![Alt](/images/resiliencypvsarch.svg "Resiliency Arch Diagram")
 {: caption="Figure X: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}
 
 Environments related to this reference architecture:
@@ -82,7 +82,7 @@ The Architecture Framework provides a consistent approach to design cloud soluti
 
 Following the Architecture Design Framework, Resiliency for PowerVS covers design considerations and architecture decisions for the following aspects and domains:
 
-![](6d17f81955f76621d66bf28354e36d8d.png)
+![Alt](/images/aixheatmap.svg "AIX Heatmap")
 
 Figure x Resiliency for PowerVS AIX Workloads heat map
 
@@ -96,10 +96,10 @@ Figure x Resiliency for PowerVS AIX Workloads heat map
 | Security           | Ensure data encryption at rest and in transit for the storage layer. Protect the boundaries of the application against denial-of-service and application-layer attacks.                                                                                                                           |
 | Resiliency         | Provide local OS level high availability between two AIX LPARs  Provide backups for data retention for AIX workloads. Recovery Time Objective (RTO) and Recovery Point Objective(/RPO) = 1 hours/1 hours.  99.99% Infrastructure Availability                                                     |
 | Service Management | Monitor the usage and performance of the resiliency components                                                                                                                                                                                                                                    |
+{: caption="Table 1. Resiliency for PowerVS requirements" caption-side="bottom"}
 
-Table 1. Resiliency for PowerVS requirements
 
-##
+
 
 ## Components
 
@@ -120,7 +120,7 @@ Table 1. Resiliency for PowerVS requirements
 |                    | Global Replication Service + IBM Toolkit for AIX Full System Replication                                                      | SAN to SAN replication between two IBM cloud data centers                                                                           |
 | Service Management | IBM Cloud Logs IBM Cloud Monitoring                                                                                           | Apps, Audit, and operational logs Monitor platform metrics                                                                          |
 
-Table 2. Resiliency for PowerVS components
+{: caption="Table 2. Resiliency for PowerVS components" caption-side="bottom"}
 
 
 
@@ -208,6 +208,7 @@ The following represents a baseline set of requirements which we believe are app
 | | Cloud infrastructure for the proposed IAAS solution must be SAP Certified |
 | | IBM Cloud IaaS will be deployed to support SAP and surrounding non-SAP workloads |
 | | Customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider Cloud deployment solution that would facilitate a future RISE transformation|
+
 {: caption="Table 1. Pattern requirements" caption-side="bottom"}  
 {: #components}
 

@@ -4,7 +4,7 @@ copyright:
   years: 2024
 lastupdated: "2024-06-20"
 
-subcollection: <repo-name>
+subcollection: pattern-pvs-aix-resiliency
 
 keywords:
 

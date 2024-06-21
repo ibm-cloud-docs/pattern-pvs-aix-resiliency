@@ -46,6 +46,7 @@ This is a baseline solution pattern containing the design and architecture decis
 {: caption="Figure X: Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server" caption-side="bottom"}
 
 ## Architecture Diagram
+{: #architecture-diagram}
 
 ![Alt](/images/resiliencypvsarch.svg "Resiliency Arch Diagram")
 {: caption="Figure X: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}
@@ -65,6 +66,7 @@ Environments related to this reference architecture:
     -   PowerVS Environment - workload PowerVS workspace, workload/GRS controller LPARs
 
 ## Design Scope
+{: #design-scope}
 
 The PowerVS resiliency for AIX workloads architecture covers design considerations and architecture decisions for the following aspects and domains (as defined in the [Architecture Design Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro)):
 
@@ -87,7 +89,7 @@ Following the Architecture Design Framework, Resiliency for PowerVS covers desig
 Figure x Resiliency for PowerVS AIX Workloads heat map
 
 ## Requirements
-
+{: #requirements-list}
 | **Aspect**         | **Requirements**                                                                                                                                                                                                                                                                                  |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Compute            | Provide CPU and RAM to support resiliency components.                                                                                                                                                                                                                                             |
@@ -102,7 +104,7 @@ Figure x Resiliency for PowerVS AIX Workloads heat map
 
 
 ## Components
-
+{: #component-list}
 | **Category**       | **Solution Components**                                                                                                       | **How it is used in solution**                                                                                                      |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | Compute            | PowerVS LPARs                                                                                                                 | High Availability workload virtual servers  Disaster Recovery workload virtual servers Global Replication Service (GRS) Controllers |
@@ -119,10 +121,7 @@ Figure x Resiliency for PowerVS AIX Workloads heat map
 |                    | PowerHA Standard                                                                                                              | Local OS level between two LPARS                                                                                                    |
 |                    | Global Replication Service + IBM Toolkit for AIX Full System Replication                                                      | SAN to SAN replication between two IBM cloud data centers                                                                           |
 | Service Management | IBM Cloud Logs IBM Cloud Monitoring                                                                                           | Apps, Audit, and operational logs Monitor platform metrics                                                                          |
-
 {: caption="Table 2. Resiliency for PowerVS components" caption-side="bottom"}
-
-
 
 ## Architecture diagram 
 {: #architecture-diagram}
@@ -208,8 +207,9 @@ The following represents a baseline set of requirements which we believe are app
 | | Cloud infrastructure for the proposed IAAS solution must be SAP Certified |
 | | IBM Cloud IaaS will be deployed to support SAP and surrounding non-SAP workloads |
 | | Customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider Cloud deployment solution that would facilitate a future RISE transformation|
+{: caption="Table 1. Pattern requirements" caption-side="bottom"}
 
-{: caption="Table 1. Pattern requirements" caption-side="bottom"}  
+## Components 
 {: #components}
 
 

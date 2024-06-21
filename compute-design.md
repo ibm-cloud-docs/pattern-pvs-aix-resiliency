@@ -40,7 +40,7 @@ Backup Methodology: **Secure Automated Backup with Compass**
 Local OS High Availability Methodology:
 
 ## PowerHA Standard
-
+{: #design-considerations-local-ha}
 -   Adequate LPAR compute for clustered AIX LPARs in one IBM Cloud datacenter for local HA.
 
 ## Compute Considerations for Disaster Recovery

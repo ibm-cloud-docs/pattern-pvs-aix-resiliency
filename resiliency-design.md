@@ -39,8 +39,10 @@ NOTE: Always validate offerings are available in the regions you are deploying v
 Secure Automated Backup with Compass - The Backup Offering VPC and the Power Virtual Server workspaces should be in the same region and connected using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired datacenters](/docs/power-iaas?topic=power-iaas-backup-strategies#baas)
 
 ## Global Replication Services **-** [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service
+{: #global-replication}
 
 ## Backup Design Considerations
+{: #backup-considerations}
 
 Backup Methodology: **Secure Automated Backup with Compass (+ mksysb)**
 
@@ -83,6 +85,7 @@ Below is a reference architecture diagram for Secure Automated Backup with Compa
 Figure X: **Secure Automated Backup with Compass**
 
 ## High Availability Design Considerations
+{: #ha-considerations}
 
 Local OS High Availability Methodology: **PowerHA Standard Edition**
 
@@ -113,6 +116,7 @@ Figure X: Local PowerHA Architecture
 In this configuration, both nodes have simultaneous access to the shared disks and own the same disk resources. There is no takeover of shared disks if a node leaves the cluster, since the peer node already has the shared volume group varied on.
 
 ## Disaster Recovery Design
+{: #dr-design}
 
 Disaster Recovery Methodology: **Secondary datacenter with Global Replication Service (GRS)**
 

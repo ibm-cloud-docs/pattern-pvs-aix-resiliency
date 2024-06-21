@@ -24,8 +24,10 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 
 
 ## Storage Considerations for Backups
+{: #storage-considerations}
 
 ### Backup Method: Secure Automated Backup with Compass + MKSYSB
+{: #backup-method}
 
 -   Compass backup servers are preconfigured in data centers and are also replicated across to the other regions.
 
@@ -40,16 +42,20 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 -   Ensure that there is sufficient file system space to hold the produced mksysb image. Generally, 10 to 15 GB is sufficient depending on additional non-AIX data added to the rootvg. Consider Cloud Object storage for mksysb images.
 
 ## Storage Considerations for High Availability
+{: #storage-ha-considerations}
 
 ### High Availability Method: PowerHA Standard for Local HA Cluster
+{: #ha-availability}
 
 -   Clustered workload LPARS share the same volume group, storage tier and size will be determined by the workload requirements.
 
 -   LUN for Cluster aware AIX (CAA) repository, 1GB recommended.
 
 ## Storage Considerations for Disaster Recovery
+{: #dr-storage-considerations}
 
 ### Disaster Recovery Method: Global Replication Services (GRS)
+{: #dr-recovery-method}
 
 Control LPARS
 

@@ -35,7 +35,8 @@ The PowerVS resiliency pattern is intended to:
 • Ensure that requirements can be met from a performance, system availability, and security perspective.
 
 
-### Pattern Considerations
+## Pattern Considerations
+{: #considerations}
 
 • Backup AIX data utilizing a managed backup service.
 

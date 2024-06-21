@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-21"
 
 subcollection: <repo-name>
 
@@ -22,11 +22,10 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 
 -   The storage required to support replication activities for disaster recovery.
 
-##
 
 ## Storage Considerations for Backups
 
-**Backup Method: Secure Automated Backup with Compass + MKSYSB**
+### Backup Method: Secure Automated Backup with Compass + MKSYSB 
 
 -   Compass backup servers are preconfigured in data centers and are also replicated across to the other regions.
 
@@ -42,7 +41,7 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 
 ## Storage Considerations for High Availability
 
-**High Availability Method: PowerHA Standard for Local HA Cluster**
+### High Availability Method: PowerHA Standard for Local HA Cluster 
 
 -   Clustered workload LPARS share the same volume group, storage tier and size will be determined by the workload requirements.
 
@@ -50,7 +49,7 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 
 ## Storage Considerations for Disaster Recovery
 
-**Disaster Recovery Method: Global Replication Services (GRS)**
+### Disaster Recovery Method: Global Replication Services (GRS)
 
 Control LPARS
 

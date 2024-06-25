@@ -60,7 +60,7 @@ Backup Methodology: **Secure Automated Backup with Compass (+ mksysb)**
 
 -   Compass backup servers are preconfigured in data centers and are also replicated across to the other regions.
 
--   By default, there are 2 copies of data - one in each MZR, service is setup in pairs; validate Secure Automated Backup with Compass [datacenter pairings]().
+-   By default, there are 2 copies of data - one in each MZR, service is setup in pairs; validate Secure Automated Backup with Compass [datacenter pairings](/docs/power-iaas?topic=power-iaas-backup-strategies#baas-dcs).
 
 -   Replication frequency - daily replication based on the local time zone.
 

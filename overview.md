@@ -16,7 +16,7 @@ keywords:
 {: #overview}
 
 
-The Deploying Resilient AIX workloads on {{site.data.keyword.powerSys_notm}} pattern deploys a multi-region solution on PowerVS that includes backup, high availability, and disaster recovery. This pattern can be used to provide an all-in approach for deploying a resilient power architecture within the PowerVS for AIX workloads. The solution does not address application or database level high available design. Test.
+The Deploying Resilient AIX workloads on {{site.data.keyword.powerSys_notm}} pattern deploys a multi-region solution on {{site.data.keyword.powerSysShort}} that includes backup, high availability, and disaster recovery. This pattern can be used to provide an all-in approach for deploying a resilient power architecture within the {{site.data.keyword.powerSysShort}} for AIX workloads. The solution does not address application or database level high available design. Test.
 
 • It can support up to 99.99% infrastructure availability when deployed as a multi-region.
 
@@ -26,9 +26,9 @@ The Deploying Resilient AIX workloads on {{site.data.keyword.powerSys_notm}} pat
 
 • It can support out-of-region disaster recovery.
 
-The PowerVS resiliency pattern is intended to:
+The {{site.data.keyword.powerSysShort}} resiliency pattern is intended to:
 
-• Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference following the IBM Architecture Design Framework.
+• Accelerate and simplify solution design by providing a standard {{site.data.keyword.cloud_notm}} deployment architecture reference following the IBM Architecture Design Framework.
 
 • Provide a prescriptive, end-to-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection for a resilient architecture.
 

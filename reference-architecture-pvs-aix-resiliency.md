@@ -55,7 +55,7 @@ Environments related to this reference architecture:
 
     -   BaaS VPC deployed as part of the backup service automation; not for workloads
 
--   Secondary IBM Cloud datacenter for disaster recovery workloads
+-   Secondary {{site.data.keyword.cloud_notm}} datacenter for disaster recovery workloads
 
     -   Edge VPC for firewall
 
@@ -109,16 +109,16 @@ Following the Architecture Design Framework, Resiliency for PowerVS covers desig
 |                    | VPC VSI                                                                                                                       | Compute for NFGW, Management Tools                                                                                                  |
 | Storage            | Flash storage from IBM FS9500 series devices                                                                                  | Web, Application, Database storage Storage for GRS                                                                                  |
 |                    | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Long term backup archive, logs                                                                                                      |
-| Networking         | IBM Cloud Direct Link                                                                                                         | Enterprise to cloud network connectivity                                                                                            |
+| Networking         | {{site.data.keyword.dl_full_notm}} Direct Link                                                                                                         | Enterprise to cloud network connectivity                                                                                            |
 |                    | Transit Gateway (TGW)                                                                                                         | Connectivity between PowerVS and VPCs                                                                                               |
-|                    | Service Endpoints                                                                                                             | Private network access to cloud services such IBM Cloud Logs, Cloud Object Storage.                                                 |
+|                    | Service Endpoints                                                                                                             | Private network access to cloud services such {{site.data.keyword.logs_full_notm}}, Cloud Object Storage.                                                 |
 |                    | [Global Transit Gateway (GTGW)](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-about)                       | Provides PowerVS and VPC connectivity in different regions (global routing)                                                         |
 |                    | [DNS Services](https://cloud.ibm.com/docs/dns-svcs?topic=dns-svcs-about-dns-services)                                         | Private DNS resolution                                                                                                              |
 | Security           | Next Generation Firewall (NFGW)                                                                                               | Provide IDS/IPS and edge firewall capabilities                                                                                      |
 | Resiliency         | Secure Automated Backup with Compass                                                                                          | Backups for AIX workloads                                                                                                           |
 |                    | PowerHA Standard                                                                                                              | Local OS level between two LPARS                                                                                                    |
-|                    | Global Replication Service + IBM Toolkit for AIX Full System Replication                                                      | SAN to SAN replication between two IBM cloud data centers                                                                           |
-| Service Management | IBM Cloud Logs IBM Cloud Monitoring                                                                                           | Apps, Audit, and operational logs Monitor platform metrics                                                                          |
+|                    | Global Replication Service + IBM Toolkit for AIX Full System Replication                                                      | SAN to SAN replication between two {{site.data.keyword.cloud_notm}} data centers                                                                           |
+| Service Management | {{site.data.keyword.logs_full_notm}} {{site.data.keyword.monitoringlong_notm}}                                                                                           | Apps, Audit, and operational logs Monitor platform metrics                                                                          |
 {: caption="Table 2. Resiliency for PowerVS components" caption-side="bottom"}
 
 ## Design scope 
@@ -159,14 +159,14 @@ The following represents a baseline set of requirements which we believe are app
 | Aspect | Requirement |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Network| Enterprise connectivity to customer data center(s) to provide access to applications from on-prem|
-| | Map and convert existing customer SAP Network functionality into IBM Cloud and VPC networking services|
-| | Migrate/Redeploy customer IP addressing scheme within the IBM Cloud environment |
+| | Map and convert existing customer SAP Network functionality into {{site.data.keyword.cloud_notm}} and VPC networking services|
+| | Migrate/Redeploy customer IP addressing scheme within the {{site.data.keyword.cloud_notm}} environment |
 | | Provide network isolation with the ability to segregate applications based on attributes such as data classification, public vs internal apps and function  |
 | Security | Provide data encryption in transit and at rest|
-| | Migrate customer IDS/IAM Services to target IBM Cloud environment |
+| | Migrate customer IDS/IAM Services to target {{site.data.keyword.cloud_notm}} environment |
 | | Retain the same firewall rulesets across existing DCs |
 | | Firewalls must be restrictively configured to provide advanced security features and prevent all traffic, both inbound and outbound, except that which is specifically required, documented, and approved, and include IPS/IDS services |
-| Resiliency | Multi-site capability to support a disaster recovery strategy and solution leveraging IBM Cloud infrastructure DR capabilities|
+| Resiliency | Multi-site capability to support a disaster recovery strategy and solution leveraging {{site.data.keyword.cloud_notm}} infrastructure DR capabilities|
 | | Provide backups for data retention|
 | | RTO/RPO = 4 hours/15 minutes; Rollback to original environments should occur no later than specified RTOs |
 | | 99.95 Availability|
@@ -175,11 +175,11 @@ The following represents a baseline set of requirements which we believe are app
 | Service management | Provide Health and System Monitoring with ability to monitor and correlate performance metrics and events and provide alerting across applications and infrastructure |
 | | Ability to diagnose issues and exceptions and identify error sources|
 | | Automate management processes to keep applications and infrastructure secure, up to date, and available |
-| Other| Migrate SAP workloads from existing data center to IBM Cloud VPC |
+| Other| Migrate SAP workloads from existing data center to {{site.data.keyword.vpc_short}} |
 | | Customer's SAP systems and applications run on NetWeaver (application) & HANA (DB), AnyDB or S/4 HANA |
 | | Provide an Image Replication migration solution that will minimize disruption during cut-over|
 | | Cloud infrastructure for the proposed IAAS solution must be SAP Certified |
-| | IBM Cloud IaaS will be deployed to support SAP and surrounding non-SAP workloads |
+| | {{site.data.keyword.cloud_notm}} IaaS will be deployed to support SAP and surrounding non-SAP workloads |
 | | Customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider Cloud deployment solution that would facilitate a future RISE transformation|
 {: caption="Table 1. Pattern requirements" caption-side="bottom"}
 
@@ -213,7 +213,7 @@ The following represents a baseline set of requirements which we believe are app
 | | One of the following: \n - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n - [Juniper vSRX](https://cloud.ibm.com/catalog/content/juniper-vsrx-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global) \n -[Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)| - IPS/IDS protection at all ingress/egress \n- Unified Threat Management (UTM) Firewall|
 | Resiliency | HANA System Replication (HSR) | Provide 99.95% availability for HANA DB|
 | | [Veeam](/docs/vpc?topic=vpc-about-veeam) | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
-| Service Management (Observability) | [IBM Cloud Monitoring](/docs/monitoring?topic=monitoring-about-monitor)| Apps and operational monitoring|
+| Service Management (Observability) | [{{site.data.keyword.monitoringlong_notm}}](/docs/monitoring?topic=monitoring-about-monitor)| Apps and operational monitoring|
 | | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |
 {: caption="Table 3. Pattern components" caption-side="bottom"}
 

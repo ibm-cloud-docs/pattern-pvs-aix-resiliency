@@ -16,7 +16,7 @@ keywords:
 {: #overview}
 
 
-The Deploying Resilient AIX workloads on Power Virtual Server pattern deploys a multi-region solution on PowerVS that includes backup, high availability, and disaster recovery. This pattern can be used to provide an all-in approach for deploying a resilient power architecture within the PowerVS for AIX workloads. The solution does not address application or database level high available design. Test.
+The Deploying Resilient AIX workloads on {{site.data.keyword.powerSys_notm}} pattern deploys a multi-region solution on PowerVS that includes backup, high availability, and disaster recovery. This pattern can be used to provide an all-in approach for deploying a resilient power architecture within the PowerVS for AIX workloads. The solution does not address application or database level high available design. Test.
 
 • It can support up to 99.99% infrastructure availability when deployed as a multi-region.
 

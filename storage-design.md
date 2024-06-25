@@ -26,8 +26,7 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 ## Storage Considerations for Backups
 {: #storage-considerations}
 
-### Backup Method: Secure Automated Backup with Compass + MKSYSB
-{: #backup-method}
+Backup Methodology: **Secure Automated Backup with Compass + MKSYSB**
 
 -   Compass backup servers are preconfigured in data centers and are also replicated across to the other regions.
 

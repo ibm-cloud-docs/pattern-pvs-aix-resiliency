@@ -42,13 +42,12 @@ content-type: reference-architecture
 
 This is a baseline solution pattern containing the design and architecture decisions for a PowerVS resiliency solution for AIX workloads to meet common requirements as noted in this use case. Actual solutions depend on the specific requirements that are set by the client. Below is a summary of the use case for this reference architecture:
 
-![Alt](/images/usecase.svg "Reference Summary")
-{: caption="Figure 1: Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server" caption-side="bottom"}{: external download="usecase.svg"}
+![AIX resiliency summary](/images/usecase.svg "Reference Summary"){: caption="Figure 1. Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server" caption-side="bottom"}{: external download="usecase.svg"}
 
 ## Architecture Diagram
 {: #architecture-diagram}
 
-![Alt](/images/resiliencypvsarch.svg "Resiliency Architecture Diagram){: caption="Figure 2: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}{: external download="resiliencypvsarch.svg"}
+![AIX reference architecture](/images/resiliencypvsarch.svg "Resiliency Architecture Diagram"){: caption="Figure 2. Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}{: external download="resiliencypvsarch.svg"}
 
 Environments related to this reference architecture:
 
@@ -83,7 +82,7 @@ The Architecture Framework provides a consistent approach to design cloud soluti
 
 Following the Architecture Design Framework, Resiliency for PowerVS covers design considerations and architecture decisions for the following aspects and domains:
 
-![Alt](/images/aixheatmap.svg "AIX Heatmap"){: caption="Figure 3: Resiliency for PowerVS AIX Workloads Heat Map" caption-side="bottom"}{: external download="aixheatmap.svg"}
+![heatmap](/images/aixheatmap.svg "AIX Heatmap"){: caption="Figure 3. Resiliency for PowerVS AIX Workloads Heat Map" caption-side="bottom"}{: external download="aixheatmap.svg"}
 
 ## Requirements
 {: #requirements-list}
@@ -215,6 +214,7 @@ The following represents a baseline set of requirements which we believe are app
 | Resiliency | HANA System Replication (HSR) | Provide 99.95% availability for HANA DB|
 | | [Veeam](/docs/vpc?topic=vpc-about-veeam) | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
 | Service Management (Observability) | [IBM Cloud Monitoring](/docs/monitoring?topic=monitoring-about-monitor)| Apps and operational monitoring|
-| | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |{: caption="Table 2. Pattern components" caption-side="bottom"} <!-- each table MUST have a caption attribute>
+| | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |
+{: caption="Table 3. Pattern components" caption-side="bottom"} <!-- each table MUST have a caption attribute>
 
 As mentioned earlier, the Architecture Framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. The following sections contain the considerations, and architecture decisions for the aspects and domains that are in play in this solution pattern.

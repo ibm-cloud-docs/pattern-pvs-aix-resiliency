@@ -53,7 +53,9 @@ Implement incident detection, notification, escalation, discovery, and declarati
 -   Alternatively, third party software such as Splunk and Datadog can be integrated with IBM Cloud to provide security monitoring, compliance reporting, and operational intelligence.
 
 References for service management for IBM Power Virtual server:
+
 [Monitoring metrics for IBM Power Virtual Server](/docs/power-iaas?topic=power-iaas-monitor-sysdig)
+
 [Activity tracker](/docs/power-iaas?topic=power-iaas-at-events)
 
 Attention: IBM Cloud Activity Tracker services are deprecated and will no longer be supported as of 30 March 2025. The replacement service, IBM Cloud Logs is planned to be generally available late second quarter 2024. For more information, see [Getting started with IBM Cloud Logs](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started).

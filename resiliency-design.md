@@ -66,7 +66,7 @@ Backup Methodology: **Secure Automated Backup with Compass (+ mksysb)**
 
 -   This third-party product is provided by a vendor outside of IBM and is subject to a separate agreement between you and the third-party if you accept their terms. IBM is not responsible for the product and makes no privacy, security, performance, support, or other commitments regarding the product.
 
--   For sizing and configuration reach out to Cobalt Iron via [support](http://support.cobaltiron.com/) methods found [here](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about).
+-   For sizing and configuration reach out to Cobalt Iron via [support](https://www.cobaltiron.com/) methods found [here](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about).
 
 -   ROI Estimator can be found [here](https://cobaltiron.valuestoryapp.com/savings-calculator/?mediafly_tco_calculator_conversion_source=site-heroslider).
 
@@ -80,9 +80,8 @@ Backup Methodology: **Secure Automated Backup with Compass (+ mksysb)**
 
 Below is a reference architecture diagram for Secure Automated Backup with Compass
 
-![](8a889a67695c1fe1c9d738d330524456.png)
-
-Figure X: **Secure Automated Backup with Compass**
+![Alt](images/baas.svg "Baas Diagram")
+{: caption="Figure X: Secure Automated Backup with Compass" caption-side="bottom"}{: external download="baas.svg"}
 
 ## High Availability Design Considerations
 {: #ha-considerations}
@@ -109,9 +108,8 @@ Local OS High Availability Methodology: **PowerHA Standard Edition**
 
 The figure below shows a configuration using PowerHA Standard Edition.
 
-![](dee6336bac9f91b2e6dee934bc0b4b03.png)
-
-Figure X: Local PowerHA Architecture
+![Alt](/images/standardpha.svg "Standard PHA Diagram")
+{: caption="Figure X: Local PowerHA Architecture" caption-side="bottom"}{: external download="standardpha.svg"}
 
 In this configuration, both nodes have simultaneous access to the shared disks and own the same disk resources. There is no takeover of shared disks if a node leaves the cluster, since the peer node already has the shared volume group varied on.
 
@@ -175,5 +173,5 @@ The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default
 
 The Figure below illustrates the use of GRS as the DR solution between 2 cloud datacenters
 
-![A diagram of a cloud computing system Description automatically generated with medium confidence](9c5f9ed49a38dfebf6d2cef46aa98934.png)
-{: caption="Figure X GRS Architecture" caption-side="bottom"}
+![ALt](/images/grs.svg "GRS Diagram")
+{: caption="Figure X GRS Architecture" caption-side="bottom"}{: external download="grs.svg"}

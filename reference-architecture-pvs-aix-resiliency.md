@@ -9,7 +9,7 @@ subcollection: pattern-pvs-aix-resiliency
 keywords:
 
 authors:
-- name: Doug Eppard
+- name: Jose Ocasio and Anne Mcdermaid
 
 # The release that the reference architecture describes
 version: 1.0
@@ -42,14 +42,14 @@ content-type: reference-architecture
 
 This is a baseline solution pattern containing the design and architecture decisions for a PowerVS resiliency solution for AIX workloads to meet common requirements as noted in this use case. Actual solutions depend on the specific requirements that are set by the client. Below is a summary of the use case for this reference architecture:
 
-![](/images/refarchsummary.svg)
-{: caption="Figure X: Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server" caption-side="bottom"}
+![Alt](/images/usecase.svg "Reference Summary")
+{: caption="Figure X: Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server" caption-side="bottom"}{: external download="usecase.svg"}
 
 ## Architecture Diagram
 {: #architecture-diagram}
 
-![Alt](/images/resiliencypvsarch.svg "Resiliency Arch Diagram")
-{: caption="Figure X: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}
+![Alt](/images/resiliencypvsarch.svg "Resiliency Architecture Diagram)
+{: caption="Figure 2: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}{: external download="resiliencypvsarch.svg"}
 
 Environments related to this reference architecture:
 
@@ -85,11 +85,13 @@ The Architecture Framework provides a consistent approach to design cloud soluti
 Following the Architecture Design Framework, Resiliency for PowerVS covers design considerations and architecture decisions for the following aspects and domains:
 
 ![Alt](/images/aixheatmap.svg "AIX Heatmap")
+{: caption="Figure 2: Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}
 
 Figure x Resiliency for PowerVS AIX Workloads heat map
 
 ## Requirements
 {: #requirements-list}
+
 | **Aspect**         | **Requirements**                                                                                                                                                                                                                                                                                  |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Compute            | Provide CPU and RAM to support resiliency components.                                                                                                                                                                                                                                             |
@@ -105,6 +107,7 @@ Figure x Resiliency for PowerVS AIX Workloads heat map
 
 ## Components
 {: #component-list}
+
 | **Category**       | **Solution Components**                                                                                                       | **How it is used in solution**                                                                                                      |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | Compute            | PowerVS LPARs                                                                                                                 | High Availability workload virtual servers  Disaster Recovery workload virtual servers Global Replication Service (GRS) Controllers |
@@ -122,30 +125,6 @@ Figure x Resiliency for PowerVS AIX Workloads heat map
 |                    | Global Replication Service + IBM Toolkit for AIX Full System Replication                                                      | SAN to SAN replication between two IBM cloud data centers                                                                           |
 | Service Management | IBM Cloud Logs IBM Cloud Monitoring                                                                                           | Apps, Audit, and operational logs Monitor platform metrics                                                                          |
 {: caption="Table 2. Resiliency for PowerVS components" caption-side="bottom"}
-
-## Architecture diagram 
-{: #architecture-diagram}
-
-
-
-Figure 1 illustrates...overview text here
-
-![A diagram of a computer network Description automatically
-generated](./image1.svg)
-
-Figure 1 Pattern-name solution architecture
-
-Figure 1 detailed description goes here
-
-
-Figure 2 illustrates ....overview text here.
-
-![A diagram of a computer network Description automatically
-generated](./image2.svg)
-
-Figure 2 Pattern-name solution architecture
-
-figure 2 detailed diagram description here
 
 ## Design scope 
 {: #design-scope}

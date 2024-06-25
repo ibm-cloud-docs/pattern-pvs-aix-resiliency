@@ -41,6 +41,7 @@ Local OS High Availability Methodology:
 
 ## PowerHA Standard
 {: #design-considerations-local-ha}
+
 -   Adequate LPAR compute for clustered AIX LPARs in one IBM Cloud datacenter for local HA.
 
 ## Compute Considerations for Disaster Recovery
@@ -64,4 +65,4 @@ Disaster Recovery Methodology: **Secondary datacenter with Global Replication Se
 
 -   SPP will allow provisioning the disaster recovery environment at the lowest possible compute configuration. At the time of the DR event, the LPARs are rehydrated from the reserved compute capacity.
 
--   SPP cost optimization by paying for compute capacity when needed. Please note SPP only reserves compute capacity, not the memory. More about SPP can be found [here] (/docs/power-iaas?topic=power-iaas-manage-SPP) and in [Managing shared processor pools](/docs/en/power9?topic=systems-managing-shared-processor-pools)
+-   SPP cost optimization by paying for compute capacity when needed. Please note SPP only reserves compute capacity, not the memory. More about SPP can be found [here](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-manage-SPP) and in [Managing shared processor pools](https://www.ibm.com/docs/en/power9?topic=systems-managing-shared-processor-pools)

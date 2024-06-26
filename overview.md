@@ -47,7 +47,7 @@ The {{site.data.keyword.powerSysShort}} resiliency pattern is intended to:
 
 Always validate offerings are available in the regions you are deploying via [{{site.data.keyword.cloud_notm}} portal](https://cloud.ibm.com/login).{: note}
 
-Resiliency needs to be considered for both the infrastructure and application levels. This pattern does not address application or database specific designs. Consider latency between environments before deciding on a replication method. Consider options for synchronous and asynchronous replication when designing database replication to meet the requirements.{: note}
+Resiliency needs to be considered for both the infrastructure and application levels. This pattern does not address application or database level high availability design. Consider latency between environments before deciding on a replication method. Consider options for synchronous and asynchronous replication when designing database replication to meet the requirements.{: note}
 
 
 

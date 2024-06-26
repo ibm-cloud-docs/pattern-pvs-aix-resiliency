@@ -74,7 +74,7 @@ Backup Methodology: **Secure Automated Backup with Compass (+ mksysb)**
 
 Below is a reference architecture diagram for Secure Automated Backup with Compass
 
-![Alt](images/baas.svg "Baas Diagram"){: caption="Figure X: Secure Automated Backup with Compass" caption-side="bottom"}{: external download="baas.svg"}
+![Alt](images/baas.svg "Baas Diagram"){: caption="Figure 1: Secure Automated Backup with Compass" caption-side="bottom"}{: external download="baas.svg"}
 
 ## High Availability Design Considerations
 {: #ha-considerations}
@@ -101,7 +101,7 @@ Local OS High Availability Methodology: **PowerHA Standard Edition**
 
 The figure below shows a configuration using PowerHA Standard Edition.
 
-![Alt](/images/standardpha.svg "Standard PHA Diagram"){: caption="Figure X: Local PowerHA Architecture" caption-side="bottom"}{: external download="standardpha.svg"}
+![Alt](/images/standardpha.svg "Standard PHA Diagram"){: caption="Figure 2: Local PowerHA Architecture" caption-side="bottom"}{: external download="standardpha.svg"}
 
 In this configuration, both nodes have simultaneous access to the shared disks and own the same disk resources. There is no takeover of shared disks if a node leaves the cluster, since the peer node already has the shared volume group varied on.
 
@@ -165,4 +165,4 @@ The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default
 
 The Figure below illustrates the use of GRS as the DR solution between 2 cloud datacenters
 
-![ALt](/images/grs.svg "GRS Diagram"){: caption="Figure X GRS Architecture" caption-side="bottom"}{: external download="grs.svg"}
+![ALt](/images/grs.svg "GRS Diagram"){: caption="Figure 3: GRS Architecture" caption-side="bottom"}{: external download="grs.svg"}

@@ -26,18 +26,14 @@ The following are requirements for the resiliency aspect:
 
 - Failover that meets the required Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) of the application.
 
-NOTE: Resiliency needs to be considered for both the infrastructure and application levels. This pattern does not address application or database specific design.{: note}
+Resiliency needs to be considered for both the infrastructure and application levels. This pattern does not address application or database specific design.{: note}
 
-NOTE: Always validate offerings are available in the regions you are deploying via [IBM Cloud portal](https://cloud.ibm.com/login). Check for paired datacenters and validate if they meet the deployment criteria for client specific requirements.{: note}
+Always validate offerings are available in the regions you are deploying via [IBM Cloud portal](https://cloud.ibm.com/login). Check for paired datacenters and validate if they meet the deployment criteria for client specific requirements.{: note}
 
-**Secure Automated Backup with Compass** 
+Secure Automated Backup with Compass - The Backup Offering VPC and the {{site.data.keyword.powerSys_notm}} workspaces should be in the same region and connected using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired datacenters](/docs/power-iaas?topic=power-iaas-backup-strategies#baas) {: note}
 
-- The Backup Offering VPC and the {{site.data.keyword.powerSys_notm}} workspaces should be in the same region and connected using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired datacenters](/docs/power-iaas?topic=power-iaas-backup-strategies#baas)
+Global Replication Services - [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service. {: note}
 
-**Global Replication Services** 
-
-- [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service
-{: #global-replication}
 
 ## Backup Design Considerations
 {: #backup-considerations}

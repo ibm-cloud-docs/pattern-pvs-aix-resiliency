@@ -35,6 +35,7 @@ The {{site.data.keyword.powerSysShort}} resiliency pattern is intended to:
 - Ensure that requirements can be met from a performance, system availability, and security perspective.
 
 
+
 ## Pattern Considerations
 {: #considerations}
 

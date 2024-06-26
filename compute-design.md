@@ -47,8 +47,7 @@ Local OS High Availability Method: **PowerHA Standard**
 Disaster Recovery Method: **Secondary datacenter with Global Replication Service (GRS)**
 
 -   Control LPARS for GRS replication
-
-    -   one control LPAR (.25 cpu x 16GB x300GB) per datacenter per OS type
+    - One control LPAR (.25 cpu x 16GB x300GB) per datacenter per OS type
 
 -   LPARS for Disaster Recovery Workloads
 

@@ -45,9 +45,9 @@ The {{site.data.keyword.powerSysShort}} resiliency pattern is intended to:
 
 - Provide a disaster recovery solution utilizing SAN to SAN replication between two regions.
 
-Note: Always validate offerings are available in the regions you are deploying via [{{site.data.keyword.cloud_notm}} portal](https://cloud.ibm.com/login).{: note}
+Always validate offerings are available in the regions you are deploying via [{{site.data.keyword.cloud_notm}} portal](https://cloud.ibm.com/login).{: note}
 
-Note: Resiliency needs to be considered for both the infrastructure and application levels. This pattern does not address application or database specific designs. Consider latency between environments before deciding on a replication method. Consider options for synchronous and asynchronous replication when designing database replication to meet the requirements.{: note}
+Resiliency needs to be considered for both the infrastructure and application levels. This pattern does not address application or database specific designs. Consider latency between environments before deciding on a replication method. Consider options for synchronous and asynchronous replication when designing database replication to meet the requirements.{: note}
 
 
 

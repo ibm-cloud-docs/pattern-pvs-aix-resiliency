@@ -18,27 +18,25 @@ keywords:
 
 The following are requirements for the resiliency aspect:
 
-• Backup all essential AIX data
+- Backup all essential AIX data
 
-• Provide OS level local high availability
+- Provide OS level local high availability
 
-• Replicate {{site.data.keyword.powerSys_notm}} workloads from a protected site to a recovery site in a different region to
+- Replicate {{site.data.keyword.powerSys_notm}} workloads from a protected site to a recovery site in a different region to enable the failover of workloads if there is a failure in the protected site.
 
-enable the failover of workloads if there is a failure in the protected site.
+- Failover that meets the required Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) of the application.
 
-• Failover that meets the required Recovery Time Objectives (RTO) and Recovery Point Objectives
+NOTE: Resiliency needs to be considered for both the infrastructure and application levels. This pattern does not address application or database specific design.{: note}
 
-(RPO) of the application.
+NOTE: Always validate offerings are available in the regions you are deploying via [IBM Cloud portal](https://cloud.ibm.com/login). Check for paired datacenters and validate if they meet the deployment criteria for client specific requirements.{: note}
 
-NOTE: Resiliency needs to be considered for both the infrastructure and application levels. This pattern
+**Secure Automated Backup with Compass** 
 
-does not address application or database specific design.
+- The Backup Offering VPC and the {{site.data.keyword.powerSys_notm}} workspaces should be in the same region and connected using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired datacenters](/docs/power-iaas?topic=power-iaas-backup-strategies#baas)
 
-NOTE: Always validate offerings are available in the regions you are deploying via [IBM Cloud portal](https://cloud.ibm.com/login). Check for paired datacenters and validate if they meet the deployment criteria for client specific requirements.
+**Global Replication Services** 
 
-Secure Automated Backup with Compass - The Backup Offering VPC and the {{site.data.keyword.powerSys_notm}} workspaces should be in the same region and connected using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired datacenters](/docs/power-iaas?topic=power-iaas-backup-strategies#baas)
-
-## Global Replication Services **-** [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service
+- [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service
 {: #global-replication}
 
 ## Backup Design Considerations

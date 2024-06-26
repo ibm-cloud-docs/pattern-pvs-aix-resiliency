@@ -35,5 +35,3 @@ It is a best practice to isolate, secure, manage, and monitor all ingress and eg
 -   All traffic, both public and private, should route through the Edge/Transit VPC for routing, isolation, and logging.
 
 -   To restrict, log and monitor administrative access to the environment, a bastion (jump) host is recommended in the Edge VPC for all administrative access. In addition, all Bastion access and activity should be logged and monitored through Privileged Access Management (PAM) services.
-
--   For additional key security areas to keep in mind while designing Resiliency for PowerVS workloads on {{site.data.keyword.cloud_notm}} see - \<pending white paper link\>

@@ -37,10 +37,7 @@ Backup Method: **Secure Automated Backup with Compass**
 {: #design-considerations-ha}
 
 
-Local OS High Availability Method:
-
-## PowerHA Standard
-{: #design-considerations-local-ha}
+Local OS High Availability Method: **PowerHA Standard**
 
 -   Adequate LPAR compute for clustered AIX LPARs in one {{site.data.keyword.cloud_notm}} datacenter for local HA.
 

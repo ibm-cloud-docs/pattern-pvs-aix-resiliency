@@ -24,7 +24,7 @@ This resiliency pattern leverages a 2-region deployment for disaster recovery. T
 
 Network Design Considerations
 
--   Network Latency
+-   **Network Latency**
 
     -   Greater distances typically necessitate asynchronous replication.
 
@@ -32,7 +32,7 @@ Network Design Considerations
 
     -   This Pattern is using Global Replication Services (GRS) which operates between two sites that are over 300 km apart.
 
--   Replication Traffic
+-   **Replication Traffic**
 
     -   Global replication traffic between {{site.data.keyword.powerSysShort}} regions will traverse the {{site.data.keyword.cloud_notm}} backbone.
 
@@ -40,7 +40,7 @@ Network Design Considerations
 
     -   Backup replication traverses TGW-\>VPE-\>{{site.data.keyword.cloud_notm}} Backbone-\> Compass Vault System-\> {{site.data.keyword.cloud_notm}} Backbone-\> Secondary Compass vault system
 
--   VPC
+-   **VPC**
 
     -   Multiple VPCs are utilized in this pattern (additional client requirements may require additional VPCs). This pattern includes:
 
@@ -48,7 +48,7 @@ Network Design Considerations
 
     -   Edge VPC - NFGW will be deployed in the Edge VPC. To provide isolation and centralized advanced security functions, the network design follows the Hub and spoke VPC model. The Edge VPC serves as the hub for which all ingress and egress traffic flows. The Edge is a virtual network (VPC) that acts as a central point of connectivity to on-premises network and all other VPCs. {{site.data.keyword.powerSysShort}} workspaces are connected to the Edge ("Hub") by a {{site.data.keyword.tg_short}}, which allows traffic routing between the VPCs and {{site.data.keyword.powerSysShort}} workspaces in the {{site.data.keyword.cloud_notm}} account.
 
--   Secure Automated Backup with Compass
+-   **Secure Automated Backup with Compass**
 
     -   When provisioned through the {{site.data.keyword.cloud_notm}} catalog, an automation process deploys the backup solution which includes:
 
@@ -60,8 +60,6 @@ Network Design Considerations
 
     -   The Backup Offering VPC and the Power Virtual Server workspaces should be in the same region and connected using the local {{site.data.keyword.tg_short}}.
 
--   HA Clusters
+-   **HA Clusters**
 
     -   Each {{site.data.keyword.powerSysShort}} will need its own IP, “service IP” typically on the same VLAN as the partner Power VSI. The service IP is an "extra" IP used for the application being HA'd.
-
--   For additional key network areas to keep in mind while designing Resiliency for {{site.data.keyword.powerSysShort}} workloads on {{site.data.keyword.cloud_notm}} see - \<pending white paper link\>

@@ -26,7 +26,7 @@ The requirements for the compute aspect for the Resiliency for PowerVS for AIX w
 ## Storage Considerations for Backups
 {: #storage-considerations}
 
-Backup Methodology: **Secure Automated Backup with Compass + MKSYSB**
+Backup Method: **Secure Automated Backup with Compass + MKSYSB**
 
 -   Compass backup servers are preconfigured in data centers and are also replicated across to the other regions.
 
@@ -43,8 +43,7 @@ Backup Methodology: **Secure Automated Backup with Compass + MKSYSB**
 ## Storage Considerations for High Availability
 {: #storage-ha-considerations}
 
-### High Availability Method: PowerHA Standard for Local HA Cluster
-{: #ha-availability}
+High Availability Method: **PowerHA Standard for Local HA Cluster**
 
 -   Clustered workload LPARS share the same volume group, storage tier and size will be determined by the workload requirements.
 
@@ -53,8 +52,7 @@ Backup Methodology: **Secure Automated Backup with Compass + MKSYSB**
 ## Storage Considerations for Disaster Recovery
 {: #dr-storage-considerations}
 
-### Disaster Recovery Method: Global Replication Services (GRS)
-{: #dr-recovery-method}
+Disaster Recovery Method: **Global Replication Services (GRS)**
 
 Control LPARS
 

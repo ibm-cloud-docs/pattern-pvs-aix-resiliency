@@ -27,7 +27,7 @@ The requirements for the compute aspect for the Resiliency for {{site.data.keywo
 ## Compute Considerations for Backups
 {: #design-considerations-backups}
 
-Backup Methodology: **Secure Automated Backup with Compass**
+Backup Method: **Secure Automated Backup with Compass**
 
 -   Fully managed backup as a service solution for any AIX workloads. Ordered and configured via the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c3RvcmFnZQ%3D%3D). Compute is deployed as a service and connected to the {{site.data.keyword.powerSysFull}} workloads via a “BaaS/Backup VPC” and a transit gateway in the client IBM Account.
 
@@ -37,7 +37,7 @@ Backup Methodology: **Secure Automated Backup with Compass**
 {: #design-considerations-ha}
 
 
-Local OS High Availability Methodology:
+Local OS High Availability Method:
 
 ## PowerHA Standard
 {: #design-considerations-local-ha}
@@ -47,7 +47,7 @@ Local OS High Availability Methodology:
 ## Compute Considerations for Disaster Recovery
 {: #design-considerations-dr}
 
-Disaster Recovery Methodology: **Secondary datacenter with Global Replication Service (GRS)**
+Disaster Recovery Method: **Secondary datacenter with Global Replication Service (GRS)**
 
 -   Control LPARS for GRS replication
 

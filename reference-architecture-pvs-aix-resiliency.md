@@ -43,7 +43,7 @@ This is a baseline solution pattern containing the design and architecture decis
 ## Architecture Diagram
 {: #architecture-diagram}
 
-![AIX reference architecture](/images/resiliencypvsarchnumbered.svg "Resiliency Architecture Diagram"){: caption="Figure 2. Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}{: external download="resiliencypvsarch.svg"}
+![AIX reference architecture](/images/resiliencypvsarchnumbered.svg "Resiliency Architecture Diagram"){: caption="Figure 2. Deploying Resilient AIX workloads on Power Virtual Server Reference Architecture" caption-side="bottom"}{: external download="resiliencypvsarchnumbered.svg"}
 
 **Environments related to this reference architecture:**
 
@@ -51,13 +51,13 @@ This is a baseline solution pattern containing the design and architecture decis
 2. The direct link then connects to a Local Transit Gateway. This advertises and routes on-premises traffic to VPC for gateway or firewall inspection.
 3. The transit gateway connects to Managment VPC which hosts your NGFW, Managment Subnets for your Bastion Hosts, and your Virtual Private Endpoint.
 4. BaaS VPC deployed as part of the backup service automation; not for workloads.
-5. The Cobalt iron VPE instance then communicates to the Cobalt Iron SAAS IBM Cloud Service. 
+5. The Cobalt iron VPE instance then communicates to the Cobalt Iron SAAS IBM Cloud Service.
 6. PowerVS Workspace is deployed within the Power Virtual Server Environment and connects to the Power Edge Router (PER).
-7. A local Power HA Standard cluster is then deployed within the workspace to provde local clustering. 
+7. A local Power HA Standard cluster is then deployed within the workspace to provde local clustering.
 8. The Managment and Workload VPC mentioned from the primary site is also deployed in DR.
 9. Global Replication Service (GRS) is deployed as part of DR SAN to SAN replication.
-10. There is also a GRS controller lpar that is also deployed at both the primary and the DR site. 
-11. Communication for GRS SAN to SAN traffic between sites occurs over the IBM private backbone. 
+10. There is also a GRS controller lpar that is also deployed at both the primary and the DR site.
+11. Communication for GRS SAN to SAN traffic between sites occurs over the IBM private backbone.
 12. Replication of the controller lpars occurs over the Global Transit gateway.
 
 ## Design Scope

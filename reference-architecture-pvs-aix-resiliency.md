@@ -49,11 +49,21 @@ Environments related to this reference architecture:
 
 -   Primary Environment – added to the primary datacenter
 
-    -   BaaS VPC deployed as part of the backup service automation; not for workloads
+    1. Provider would connect the environment using a direct link for private connectivity
+    2. The direct link then connects to a Local Transit Gateway. This advertises and routes on-premises traffic to VPC for gateway or firewall inspection.
+    3. The transit gateway connects to Managment VPC which hosts your NGFW, Managment Subnets for your Bastion Hosts, and your Virtual Private Endpoint.
+    4. BaaS VPC deployed as part of the backup service automation; not for workloads.
+    5. The Cobalt iron VPE instance then communicates to the Cobalt Iron SAAS IBM Cloud Service . 
+    5. PowerVS Workspace is deployed within the Power Virtual Server Environment and connects to the Power Edge Router (PER).
+    6. A local Power HA Standard cluster is then deployed within the workspace to provde local clustering. 
 
 -   Secondary {{site.data.keyword.cloud_notm}} datacenter for disaster recovery workloads
 
-    -   Edge VPC for firewall
+    7. Same Managment and Workload VPC mentioned from the primary site is deployed
+    8. Global Replication Service (GRS) is deployed as part of DR SAN to SAN replication 
+    9. There is also a GRS controller lpar that is also deployed at both the primary and the DR site. 
+    10. Communication for GRS traffic between sites occurs over the IBM private backbone. 
+    11. Replication of the controller lpars occurs over the Global Transit gateway.
 
     -   Management VPC for management tool stacks to manage VPC, PowerVS environments
 

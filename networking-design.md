@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-28"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -15,51 +15,51 @@ keywords:
 # Network design
 {: #network-design}
 
+This resiliency pattern uses a two-region deployment for disaster recovery. The requirements for the network aspect for the resiliency on {{site.data.keyword.powerSysShort}} workloads pattern focus on:
 
-This resiliency pattern leverages a 2-region deployment for disaster recovery. The requirements for the network aspect for the Resiliency on {{site.data.keyword.powerSysShort}} workloads pattern focus on:
+- Resilience for enterprise connectivity to the {{site.data.keyword.powerSysShort}} disaster recovery environment.
+- Connectivity between data centers
 
--   Resilience for Enterprise connectivity to {{site.data.keyword.powerSysShort}} Disaster Recovery Environment
+## Network Design Considerations
+{: #network-design-consideratons}
 
--   Connectivity between datacenters
+### Network latency
 
-Network Design Considerations
+- This Pattern is using Global Replication Services (GRS) which operates between two sites that are over 300 km apart.
+- Greater distances typically need asynchronous replication.
+- Depending on the application, synchronous mirroring might be the only practical approach.
 
--   **Network Latency**
+### Replication Traffic
 
-    -   Greater distances typically necessitate asynchronous replication.
+-   Global replication traffic between {{site.data.keyword.powerSysShort}} regions traverse the {{site.data.keyword.cloud_notm}} backbone.
 
-    -   Depending on the application, synchronous mirroring maybe the only practical approach
+-   GRS control LPAR traffic traverses the GTGW.
 
-    -   This Pattern is using Global Replication Services (GRS) which operates between two sites that are over 300 km apart.
+-   Backup replication traverses TGW-\>VPE-\>{{site.data.keyword.cloud_notm}} Backbone-\> Compass Vault System-\> {{site.data.keyword.cloud_notm}} Backbone-\> Secondary Compass vault system
 
--   **Replication Traffic**
+## Virtual Private Cloud (VPC)
 
-    -   Global replication traffic between {{site.data.keyword.powerSysShort}} regions will traverse the {{site.data.keyword.cloud_notm}} backbone.
+Multiple VPCs are used in this pattern. Additional client requirements might require additional VPCs. This pattern includes:
 
-    -   GRS control LPAR traffic traverse the GTGW.
+- Baas and backup VPC: Secure Automated Backup with Compass automated deployment deploys a Baas and backup VPC. 
 
-    -   Backup replication traverses TGW-\>VPE-\>{{site.data.keyword.cloud_notm}} Backbone-\> Compass Vault System-\> {{site.data.keyword.cloud_notm}} Backbone-\> Secondary Compass vault system
+    It's recommended that you don't deploy additional workloads in this VPC.
+    {: note}
 
--   **VPC**
+- Edge VPC: NFGW is deployed in the Edge VPC. To provide isolation and centralized advanced security functions, the network design follows the hub and spoke VPC model. The Edge VPC serves as the hub for which all ingress and egress traffic flows. The Edge is a virtual network VPC that acts as a central point of connectivity to on-premises network and all other VPCs. {{site.data.keyword.powerSysShort}} workspaces are connected to the Edge also know as the Hub by a {{site.data.keyword.tg_short}}, which allows traffic routing between the VPCs and {{site.data.keyword.powerSysShort}} workspaces in the {{site.data.keyword.cloud_notm}} account.
 
-    -   Multiple VPCs are utilized in this pattern (additional client requirements may require additional VPCs). This pattern includes:
+### Secure automated backup with Compass
 
-    -   “Baas/Backup VPC” - Secure Automated Backup with Compass automated deployment will deploy a “Baas/Backup vpc”. It is recommended to not deploy additional workloads in this VPC.
+- When provisioned through the {{site.data.keyword.cloud_notm}} catalog, an automation process deploys the backup solution, which includes:
 
-    -   Edge VPC - NFGW will be deployed in the Edge VPC. To provide isolation and centralized advanced security functions, the network design follows the Hub and spoke VPC model. The Edge VPC serves as the hub for which all ingress and egress traffic flows. The Edge is a virtual network (VPC) that acts as a central point of connectivity to on-premises network and all other VPCs. {{site.data.keyword.powerSysShort}} workspaces are connected to the Edge ("Hub") by a {{site.data.keyword.tg_short}}, which allows traffic routing between the VPCs and {{site.data.keyword.powerSysShort}} workspaces in the {{site.data.keyword.cloud_notm}} account.
+- {{site.data.keyword.vpc_full}} (VPC) exclusive use of the backup activity (“Baas/Backup vpc”)
 
--   **Secure Automated Backup with Compass**
+- Virtual Private Endpoints (VPE) to establish a secure private network connection to the Compass backup servers.
 
-    -   When provisioned through the {{site.data.keyword.cloud_notm}} catalog, an automation process deploys the backup solution which includes:
+- A local {{site.data.keyword.tg_short}} if it does not exist.
 
-        -   {{site.data.keyword.vpc_full}} (VPC) exclusive use of the backup activity (“Baas/Backup vpc”)
+- The backup offering VPC and the Power Virtual Server workspaces should be in the same region and connected by using the local {{site.data.keyword.tg_short}}.
 
-        -   Virtual Private Endpoints (VPE) to establish secure private network connection to the Compass backup servers.
+### High availability clusters
 
-        -   A local {{site.data.keyword.tg_short}} if it does not already exist.
-
-    -   The Backup Offering VPC and the Power Virtual Server workspaces should be in the same region and connected using the local {{site.data.keyword.tg_short}}.
-
--   **HA Clusters**
-
-    -   Each {{site.data.keyword.powerSysShort}} will need its own IP, “service IP” typically on the same VLAN as the partner Power VSI. The service IP is an "extra" IP used for the application being HA'd.
+Each {{site.data.keyword.powerSysShort}} needs its own IP, “service IP” typically on the same VLAN as the partner Power VSI. The service IP is an "extra" IP used for the application being HA'd.

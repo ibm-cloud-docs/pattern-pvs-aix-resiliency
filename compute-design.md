@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-02"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -17,28 +17,32 @@ keywords:
 
 The requirements for the resiliency for {{site.data.keyword.powerSysFull}} AIX workloads pattern focus on:
 
--   The compute aspects required for the backup components.
--   The compute aspects required for the disaster recovery workloads.
--   The compute aspects required to support high availability activities.
+-  The compute aspects required for the backup components.
+-  The compute aspects required for the disaster recovery workloads.
+-  The compute aspects required to support high availability activities.
 
 ## Compute considerations for backups
 {: #design-considerations-backups}
 
 Review the following backup method for a Secure Automated Backup with Compass: 
 
-This is a fully managed backup as a service solution for any AIX workloads. It is ordered and configured by using the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2FY2F0ZWdvcnk9c3RvcmFnZQ%3D%3D) {: external}. Compute is deployed as a service and connected to the {{site.data.keyword.powerSysFull}} workloads through a BaaS/Backup VPC and a transit gateway in the client {{site.data.keyword.Bluemix_notm}} account.
+This is a fully managed backup as a service solution for any AIX workloads. It is ordered and configured by using the [Managing shared processor pools](/catalog/services/secure-automated-backup-with-compass){: external}. Compute is deployed as a service and connected to the {{site.data.keyword.powerSysFull}} workloads through a Backup as a Service VPC and a transit gateway in the client {{site.data.keyword.Bluemix_notm}} account.
 
 Compass backup servers are preconfigured in data centers and are also replicated across to the other regions. When a customer provisions the backup offering through {{site.data.keyword.cloud_notm}} catalog, an automation process deploys the backup offering, Virtual Private Cloud (VPC), and necessary Virtual Private Endpoints (VPE) to establish secure private network connection to the Compass backup servers. 
 
-It's recommended that you refrain from deploying any additional resources to backup offering VPC.
+It is advisable to avoid allocating any additional resources to the backup VPC, as this VPC is exclusively dedicated to the compass solution.
 {: tip}
 
 ## Compute considerations for high availability
 {: #design-considerations-ha}
 
-The local OS high availability method is PowerHA Standard.
+The local operating system high availability method is PowerHA Standard.
 
-This method offers adequate LPAR compute for clustered AIX LPARs in one {{site.data.keyword.cloud_notm}} data center for local high availability.
+- This allows the failover of 2 LPAR sharing the same storage volume
+
+- If one LPAR were to fail the second LPAR would resume the primary role and the system would continue to function as usual. 
+
+- This method offers adequate LPAR compute for clustered AIX LPARs in one {{site.data.keyword.cloud_notm}} data center for local high availability.
 
 ## Compute considerations for disaster recovery
 {: #design-considerations-dr}
@@ -61,4 +65,4 @@ The disaster recovery method is a secondary data center with Global Replication 
 
 - Optimize the shared processor pool costs by paying for compute capacity when needed.
 
-The shared processor pool reserves only compute capacity, not the memory. For more information, see [The shared processor pool](/docs/power-iaas?topic=power-iaas-manage-SPP) and in [Managing shared processor pools](https://www.ibm.com/docs/en/power9?topic=systems-managing-shared-processor-pools){: external}.
+The shared processor pool (SPP) reserves only compute capacity, not the memory. For more information, see [The shared processor pool](/docs/power-iaas?topic=power-iaas-manage-SPP) and in [Managing shared processor pools](https://www.ibm.com/docs/en/power9?topic=systems-managing-shared-processor-pools){: external}.

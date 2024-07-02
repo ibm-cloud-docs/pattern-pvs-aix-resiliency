@@ -51,13 +51,13 @@ The Secure Automated Backup with Compass is a fully IBM managed backup solution 
 
 - This third-party product is provided by a vendor outside of IBM and is subject to a separate agreement between you and the third-party if you accept their terms. IBM is not responsible for the product and makes no privacy, security, performance, support, or other commitments regarding the product.
 
-For sizing and configuration reach out to Cobalt Iron via [support](https://www.cobaltiron.com/) methods found [here](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about).
+For sizing and configuration reach out to Cobalt Iron via the following: [support](/docs/power-iaas?topic=power-iaas-backup-strategies#baas-support) methods found [here](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about).
 
 -   ROI Estimator can be found [here](https://cobaltiron.valuestoryapp.com/savings-calculator/?mediafly_tco_calculator_conversion_source=site-heroslider).
 
 -   Rootvg restore method is required, such as mksysb stored/retrieved from COS. The restored mksysb image applies the AIX configuration details while preserving the {{site.data.keyword.powerSys_notm}} deployed storage and networking resources. For more information see [mksysb](/docs/power-iaas?topic=power-iaas-restoring-aix-mksysb-image).
 
--   Check for Secure Automated Backup with Compass [region availability](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass).
+-   Check for Secure Automated Backup with Compass [region availability](/catalog/services/secure-automated-backup-with-compass).
 
 -   The Compass Commander UI is in the IBM cloud and accessible from the IBM cloud. It is external to the VPC, SSO enabled.
 
@@ -82,13 +82,13 @@ Local OS High Availability Methodology: **PowerHA Standard Edition**
 
 - Failover Resource Groups between Cluster members/sites
 
-For more information on POWERHA, see https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-ha-dr
+For more information on POWERHA, see [High availability and disaster recovery](/docs/power-iaas?topic=power-iaas-ha-dr)
 
 PowerHA supports resource optimization high availability (ROHA) for AIX instances on {{site.data.keyword.powerSys_notm}}. This is not discussed in this pattern, however, ROHA is another level of automation built into PowerHA that could be considered. It enables clustered instances to automatically adjustment central processing units (CPUs) and memory resources, which allows organizations to be more efficient in their overall use and consumption of those resources. For more information on configuring and using ROHA with {{site.data.keyword.powerSys_notm}}, see [Resource Optimized High Availability in Cloud](/docs/en/powerha-aix/7.2?topic=administering-resources-optimized-high-availability-in-cloud).
 
 The following figure shows a configuration using PowerHA Standard Edition.
 
-![Alt](/images/standardpha.svg "Standard PHA Diagram"){: caption="Figure 2: Local PowerHA Architecture" caption-side="bottom"}{: external download="standardpha.svg"}
+![Standard PHA](/images/standardpha.svg "Standard PHA Diagram"){: caption="Figure 2: Local PowerHA Architecture" caption-side="bottom"}{: external download="standardpha.svg"}
 
 In this configuration, both nodes have simultaneous access to the shared disks and own the same disk resources. There is no takeover of shared disks if a node leaves the cluster, since the peer node already has the shared volume group varied on.
 
@@ -109,7 +109,7 @@ The GRS involves two sites, over 300 km apart, where storage replication is enab
 
 Review the key capabilities for design disaster recovery:
 
-- Volume-based async storage replication using consistency groups
+- Volume-based async storage replication using Consistency Groups (CG)
 
 - CG Services to create and delete CGs, add and remove volumes, stop and start, etc.
 
@@ -153,4 +153,4 @@ Consider the IBM Toolkit for AIX from IBM Technology Expert Labs for disaster re
 
 The following image illustrates the use of GRS as the DR solution between two cloud data centers. 
 
-![ALt](/images/grs.svg "GRS Diagram"){: caption="Figure 3: GRS Architecture" caption-side="bottom"}{: external download="grs.svg"}
+![GRS](/images/grs.svg "GRS Diagram"){: caption="Figure 3: GRS Architecture" caption-side="bottom"}{: external download="grs.svg"}

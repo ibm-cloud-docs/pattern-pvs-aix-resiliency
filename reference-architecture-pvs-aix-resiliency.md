@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-02"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -41,16 +41,16 @@ Review the environments that are related to this reference architecture:
 
 1. Provider would connect the environment by using a direct link for private connectivity.
 2. The direct link then connects to a Local Transit Gateway. This advertises and routes on-premises traffic to VPC for gateway or firewall inspection.
-3. The transit gateway connects to managment VPC, which hosts your NGFW, management subnets for your bastion hosts, and your Virtual Private Endpoint.
-4. BaaS VPC is deployed as part of the backup service automation not for workloads.
+3. The transit gateway connects to managment VPC, which hosts your Next Generation Firewall, management subnets for your bastion hosts, and your Virtual Private Endpoint.
+4. Backup as a Service VPC is deployed as part of the backup service automation not for workloads.
 5. The Cobalt Iron VPE instance then communicates to the Cobalt Iron SaaS {{site.data.keyword.Bluemix_notm}} service.
 6. PowerVS workspace is deployed within the Power Virtual Server environment and connects to the Power Edge Router (PER).
 7. A local Power high availability standard cluster is then deployed within the workspace to provide local clustering.
 8. The management and workload VPC mentioned from the primary site is also deployed in disaster recovery.
-9. Global Replication Service (GRS) is deployed as part of DR SAN to SAN replication.
-10. There is a GRS controller LPAR that is deployed at both the primary and the DR site.
+9. Global Replication Service (GRS) is deployed as part of Disaster Recovery Storage Area Network to Storage Area Network replication.
+10. There is a GRS controller Logical Partition that is deployed at both the primary and the DR site.
 11. Communication for GRS SAN to SAN traffic between sites occurs over the {{site.data.keyword.IBM_notm}} private backbone.
-12. Replication of the controller LPARs occurs over the Global Transit gateway.
+12. Replication of the controller Logical Partitions occurs over the Global Transit gateway.
 
 ## Design scope
 {: #design-scope}
@@ -67,7 +67,7 @@ The PowerVS resiliency for AIX workloads architecture covers design consideratio
 
 - Resiliency: Backups and Restore, High Availability, Disaster Recovery
 
-The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more information, see [Introduction to the Architecture Design Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro).
+The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more information, see [Introduction to the Architecture Design Framework](/docs/architecture-framework?topic=architecture-framework-intro).
 
 Following the Architecture Design Framework, Resiliency for PowerVS covers design considerations and architecture decisions for the following aspects and domains:
 
@@ -95,7 +95,7 @@ Following the Architecture Design Framework, Resiliency for PowerVS covers desig
 | Category      | Solution Components                                                                                                       | How it is used in a solution                                                                                                      |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | Compute            | PowerVS LPARs                                                                                                                 | - High availability workload virtual servers  \n - Disaster Recovery workload virtual servers  \n - Global Replication Service (GRS) Controllers |
-|                    | VPC VSI                                                                                                                       | Compute for NFGW and management tools                                                                                                  |
+|                    | VPC VSI                                                                                                                       | Compute for NGFW and management tools                                                                                                  |
 | Storage            | Flash Storage from IBM FS9500 series devices                                                                                  | Web, application, database storage Storage for GRS                                                                                  |
 |                    | [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | - long-term backup archive  \n -  Logs                                                                                                      |
 | Networking         | {{site.data.keyword.dl_full_notm}}                                                                                                          | Enterprise to cloud network connectivity                                                                                            |

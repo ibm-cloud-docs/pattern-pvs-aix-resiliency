@@ -22,7 +22,8 @@ The following are requirements for the security aspect for the Resiliency for Po
 
 -   Protect the boundaries of the application against denial-of-service and application-layer attacks.
 
-Security Design Considerations
+## Security Design Considerations
+{: #security-design-considerations}
 
 Security should be applied at all layers of the solution for defense in depth depending on requirements, for example at the network edge, VPCs, and at every compute instance as well as at the application and database layers. In addition, data should be protected both in transit and at rest according to data classification and controls should be in place to eliminate the need for direct access to the environment, and when direct access is needed, all access should be logged and monitored.
 

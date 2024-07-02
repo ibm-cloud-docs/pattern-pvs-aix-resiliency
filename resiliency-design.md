@@ -40,8 +40,8 @@ Global Replication Services: Review the [Locations](/docs/power-iaas?topic=power
 
 The Secure Automated Backup with Compass is a fully IBM managed backup solution for AIX workloads.
 
- - File-level backup and restore
- - Image-level backup and restore
+- File-level backup and restore
+- Image-level backup and restore
 - Policy management down to the directory and file object or type levels
 - Backup and archive features that includes long-term retention of data
 - Backup and restore tool for periodic copies of data and applications to a separate, secondary device or secondary site and then using those copies to recover the data and applications.
@@ -57,11 +57,11 @@ For sizing and configuration reach out to Cobalt Iron via the following: [suppor
 
 -   Rootvg restore method is required, such as mksysb stored/retrieved from COS. The restored mksysb image applies the AIX configuration details while preserving the {{site.data.keyword.powerSys_notm}} deployed storage and networking resources. For more information see [mksysb](/docs/power-iaas?topic=power-iaas-restoring-aix-mksysb-image).
 
--   Check for Secure Automated Backup with Compass [region availability](/catalog/services/secure-automated-backup-with-compass).
+-   Check for Secure Automated Backup with Compass [region availability](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass){: external}.
 
 -   The Compass Commander UI is in the IBM cloud and accessible from the IBM cloud. It is external to the VPC, SSO enabled.
 
-![Alt](images/baas.svg "Baas Diagram"){: caption="Figure 1: Secure Automated Backup with Compass" caption-side="bottom"}{: external download="baas.svg"}
+![Baas](images/baas.svg "Baas Diagram"){: caption="Figure 1: Secure Automated Backup with Compass" caption-side="bottom"}{: external download="baas.svg"}
 
 ## Design sonsiderations: High availability
 {: #ha-considerations}

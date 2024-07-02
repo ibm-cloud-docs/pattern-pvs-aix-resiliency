@@ -26,7 +26,7 @@ The requirements for the resiliency for {{site.data.keyword.powerSysFull}} AIX w
 
 Review the following backup method for a Secure Automated Backup with Compass: 
 
-This is a fully managed backup as a service solution for any AIX workloads. It is ordered and configured by using the [Managing shared processor pools](/catalog/services/secure-automated-backup-with-compass){: external}. Compute is deployed as a service and connected to the {{site.data.keyword.powerSysFull}} workloads through a Backup as a Service VPC and a transit gateway in the client {{site.data.keyword.Bluemix_notm}} account.
+This is a fully managed backup as a service solution for any AIX workloads. It is ordered and configured by using the [Managing shared processor pools](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass){: external}. Compute is deployed as a service and connected to the {{site.data.keyword.powerSysFull}} workloads through a Backup as a Service VPC and a transit gateway in the client {{site.data.keyword.Bluemix_notm}} account.
 
 Compass backup servers are preconfigured in data centers and are also replicated across to the other regions. When a customer provisions the backup offering through {{site.data.keyword.cloud_notm}} catalog, an automation process deploys the backup offering, Virtual Private Cloud (VPC), and necessary Virtual Private Endpoints (VPE) to establish secure private network connection to the Compass backup servers. 
 

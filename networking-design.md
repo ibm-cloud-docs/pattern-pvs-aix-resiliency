@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-02"
+lastupdated: "2024-07-03"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -26,12 +26,16 @@ This resiliency pattern uses a two-region deployment for disaster recovery. The 
 ### Network latency
 {: #network-latency}
 
-- This Pattern is using Global Replication Services (GRS) which operates between two sites that are over 300 km apart.
+Network latency refers to the amount of time it takes for data to travel from one point to another across a network. In our pattern latency effects 2 aspects. The first one is high availibiility and the second is disaster recovery. Here are some latency considerations based on our pattern:
+
+- This Pattern is using Global Replication Services (GRS) which operates between two sites that are over 300 km apart. 
 - Greater distances typically need asynchronous replication. This is because asynchronous replication is designed to work over longer distances. 
 - Depending on the application, synchronous mirroring might be the only practical approach.
 
 ### Replication Traffic
 {: #replication-traffic}
+
+Replication traffic refers to the data transmitted between systems during the process of replicating or copying information from one location to another. Here are some key considerations for replication traffic when implementing backup and disaster recovery:
 
 - Global replication traffic between {{site.data.keyword.powerSysShort}} regions traverse the {{site.data.keyword.cloud_notm}} backbone.
 - GRS control Logical Partition (LPAR) traffic traverses the GTGW.
@@ -42,7 +46,7 @@ This resiliency pattern uses a two-region deployment for disaster recovery. The 
 
 Multiple VPCs are used in this pattern. Additional client requirements might require additional VPCs. This pattern includes:
 
-- Baas and backup VPC: Secure Automated Backup with Compass automated deployment deploys a Baas and backup VPC. 
+- BaaS and backup VPC: Secure Automated Backup with Compass automated deployment deploys a BaaS and backup VPC. 
 
     It's recommended that you don't deploy additional workloads in this VPC.
     {: note}
@@ -52,7 +56,8 @@ Multiple VPCs are used in this pattern. Additional client requirements might req
 ### Secure automated backup with Compass
 {: #secure-automated-backup-compass}
 
-- When provisioned through the {{site.data.keyword.cloud_notm}} catalog, an automation process deploys the backup solution, which includes:
+When provisioned through the {{site.data.keyword.cloud_notm}} catalog, an automation process deploys the backup solution, which includes:
+
 - {{site.data.keyword.vpc_full}} (VPC) exclusive use of the backup activity (“Baas/Backup vpc”)
 - Virtual Private Endpoints (VPE) to establish a secure private network connection to the Compass backup servers.
 - A local {{site.data.keyword.tg_short}} if it does not exist. The cloud account will notify you if one does exist. 

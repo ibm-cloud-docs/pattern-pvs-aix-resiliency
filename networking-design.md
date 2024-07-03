@@ -26,7 +26,9 @@ This resiliency pattern uses a two-region deployment for disaster recovery. The 
 ### Network latency
 {: #network-latency}
 
-Network latency refers to the amount of time it takes for data to travel from one point to another across a network. In our pattern latency effects 2 aspects. The first one is high availibiility and the second is disaster recovery. Here are some latency considerations based on our pattern:
+Network latency refers to the amount of time it takes for data to travel from one point to another across a network. In our pattern latency effects 2 aspects. The first one is high availibiility and the second is disaster recovery. 
+
+Here are some latency considerations based on our pattern:
 
 - This Pattern is using Global Replication Services (GRS) which operates between two sites that are over 300 km apart. 
 - Greater distances typically need asynchronous replication. This is because asynchronous replication is designed to work over longer distances. 
@@ -35,7 +37,9 @@ Network latency refers to the amount of time it takes for data to travel from on
 ### Replication Traffic
 {: #replication-traffic}
 
-Replication traffic refers to the data transmitted between systems during the process of replicating or copying information from one location to another. Here are some key considerations for replication traffic when implementing backup and disaster recovery:
+Replication traffic refers to the data transmitted between systems during the process of replicating or copying information from one location to another. 
+
+Here are some key considerations for replication traffic when implementing backup and disaster recovery:
 
 - Global replication traffic between {{site.data.keyword.powerSysShort}} regions traverse the {{site.data.keyword.cloud_notm}} backbone.
 - GRS control Logical Partition (LPAR) traffic traverses the GTGW.
@@ -48,7 +52,7 @@ Multiple VPCs are used in this pattern. Additional client requirements might req
 
 - BaaS and backup VPC: Secure Automated Backup with Compass automated deployment deploys a BaaS and backup VPC. 
 
-    It's recommended that you don't deploy additional workloads in this VPC.
+    We recommend refraining from deploying additional workloads in this VPC, as it is intended exclusively for the backup solution.
     {: note}
 
 - Edge VPC: Next Generation Firewall (NGFW) is deployed in the Edge VPC. To provide isolation and centralized advanced security functions, the network design follows the hub and spoke VPC model. The Edge VPC serves as the hub for which all ingress and egress traffic flows. The Edge is a virtual network VPC that acts as a central point of connectivity to on-premises network and all other VPCs. {{site.data.keyword.powerSysShort}} workspaces are connected to the Edge also know as the Hub by a {{site.data.keyword.tg_short}}, which allows traffic routing between the VPCs and {{site.data.keyword.powerSysShort}} workspaces in the {{site.data.keyword.cloud_notm}} account.

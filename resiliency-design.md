@@ -35,10 +35,12 @@ Secure Automated Backup with Compass: The backup offering VPC and the {{site.dat
 Global Replication Services: Review the [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support global replication service.
 
 
-## Design considerations: Backup
+## Resiliency Design Considerations for Backup
 {: #backup-considerations}
 
 The Secure Automated Backup with Compass is a fully IBM managed backup solution for AIX workloads.
+
+Here are some key considerations when deploying the Secure Automated Backup with Cobalt solution:
 
 - File-level backup and restore
 - Image-level backup and restore
@@ -63,10 +65,12 @@ For sizing and configuration reach out to Cobalt Iron via the following: [suppor
 
 ![Baas](images/baas.svg "Baas Diagram"){: caption="Figure 1: Secure Automated Backup with Compass" caption-side="bottom"}{: external download="baas.svg"}
 
-## Design sonsiderations: High availability
+## Resiliency Design Considerations for High Availability
 {: #ha-considerations}
 
 Local OS High Availability Methodology: **PowerHA Standard Edition**
+
+Here are some key considerations when deploying PowerHA Standard Edition:
 
 -   By default, {{site.data.keyword.powerSys_notm}}s are restarted on a different host system if a hardware failure occurs. PowerHA standard edition provides local clustering of “mission critical” workloads.
 
@@ -92,10 +96,10 @@ The following figure shows a configuration using PowerHA Standard Edition.
 
 In this configuration, both nodes have simultaneous access to the shared disks and own the same disk resources. There is no takeover of shared disks if a node leaves the cluster, since the peer node already has the shared volume group varied on.
 
-## Disaster recovery: Design
+## Resiliency Design Considerations for Disaster Recovery
 {: #dr-design}
 
-Secondary datacenter with Global Replication Service (GRS)
+***Secondary datacenter with Global Replication Service (GRS)***
 
 The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default. When a LPAR has an outage within the service, it automatically attempts to restart that lpar on a separate host. For a Tier 3 SLA of 99.99% the workload is distributed across 2 data centers. Supporting a 1 hour RTO and 1 hour RPO, the solution described in this pattern includes
 
@@ -123,30 +127,22 @@ For more information, see [Global Replication Services Solution using IBM Power 
 
 Consider the IBM Toolkit for AIX from IBM Technology Expert Labs for disaster recovery automation functions and capabilities on the IBM Cloud by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. With the Toolkit, simplify and automate operations of the disaster recovery solution. IBM Toolkit for AIX Full System Replication (AIX) enables automate disaster recovery functions and capabilities on the IBM Cloud by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. Clients can manage their DR environment using their existing AIX skills. Toolkit functions:
 
-    -   Full System Replication for IBM AIX {{site.data.keyword.powerSys_notm}}
+-   Full System Replication for IBM AIX {{site.data.keyword.powerSys_notm}}
+    -   Replicate your data from between IBM Cloud sites
+    -   Replicate the AIX OS volumes
 
-        -   Replicate your data from between IBM Cloud sites
+-   Disaster Recovery Services
+    -   Perform a VM switch by deactivating a VM from one site and activating its replicated VM on another site
 
-        -   Replicate the AIX OS volumes
+-   Administrative Functions
+    -   Reduce outage time by activating your application on another IBM site while performing required maintenance
 
-    -   Disaster Recovery Services
-
-        -   Perform a VM switch by deactivating a VM from one site and activating its replicated VM on another site
-
-    -   Administrative Functions
-
-        -   Reduce outage time by activating your application on another IBM site while performing required maintenance
-
-    -   How to get started: [technologyservices@ibm.com](mailto:technologyservices@ibm.com)
+-   How to get started: [technologyservices@ibm.com](mailto:technologyservices@ibm.com)
 
 -   To fully automate the site/volume relationship requires PowerHA Enterprise Edition. PowerHA GLVM Functions:
-
     -   Automate all rpvserver / rpvclient relationships
-
     -   Ensure that all LV copies are kept in sync
-
     -   If half of the disks are missing perform a "force" varyon
-
     -   Handle Data Divergence dominant site
 
 -   Validate [datacenter pairings](/docs/power-iaas?topic=power-iaas-getting-started-GRS) available for global replication service.

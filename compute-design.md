@@ -58,10 +58,10 @@ In the IBM Power Virtual Server Resileincy Pattern are several compute considera
 - The method chosen for this pattern was to deploy a seconadry site using GRS as the replication method. 
 
 - The control LPARS for GRS replication: One control LPAR (.25 cpu x 16 GB x300GB) per data center and per OS type.
-  - The control LPAR (Logical Partition) is responsible for managing GRS operations.
-  - It coordinates data sharing and replication across systems within the same SYSPLEX (a set of interconnected systems).
-  - The control LPAR ensures consistency, failover, and failback mechanisms during disaster recovery scenarios.
-  - It handles serialization, buffering, and metadata management for GRS-enabled datasets.
+ - The control LPAR (Logical Partition) is responsible for managing GRS operations.
+ - It coordinates data sharing and replication across systems within the same SYSPLEX (a set of interconnected systems).
+ - The control LPAR ensures consistency, failover, and failback mechanisms during disaster recovery scenarios.
+ - It handles serialization, buffering, and metadata management for GRS-enabled datasets.
 
 - LPARS for Disaster Recovery Workloads at the secondary data center. 
 

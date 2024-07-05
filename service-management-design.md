@@ -16,11 +16,12 @@ keywords:
 {: #service-managment-design}
 
 
+
+Typically, service management tools are integrated with a centralized Service Management Ticketing System to provide a single pane of glass for all operations activities. The list of tools is based on client's needs and requirements and what level of management one wants to perform. There are general guidelines and some recommendations in the Service management Architecture decision section.
+
 The following are requirements for the service management aspect for the Resiliency for PowerVS workloads pattern:
 
 -   Monitor the usage and performance of the backup, high availability, and disaster recovery components.
-
-Typically, service management tools are integrated with a centralized Service Management Ticketing System to provide a single pane of glass for all operations activities. The list of tools is based on client's needs and requirements and what level of management one wants to perform. There are general guidelines and some recommendations in the Service management Architecture decision section.
 
 Operations management is a key aspect of building resilient applications. To support the application availability targets:
 

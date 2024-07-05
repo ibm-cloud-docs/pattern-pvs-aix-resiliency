@@ -15,7 +15,7 @@ keywords:
 # Resiliency design
 {: #resiliency-design}
 
-The following are resiliency design considerations for the resilient AIX workloads on {{site.data.keyword.powerSys_notm}} pattern. Resiliency is the ability for a workload to meet a specific target Service Level Objective (SLO), Service Level Availability (SLA), or recover from a service disruption and still meet the required SLA. Resiliency needs to be considered at both the infrastructure and application layers across the entire solution.
+The following are resiliency design considerations for the {{site.data.keyword.powerSys_notm}} on AIX pattern. Resiliency is the ability for a workload to meet a specific target Service Level Objective (SLO), Service Level Availability (SLA), or recover from a service disruption and still meet the required SLA. Resiliency needs to be considered at both the infrastructure and application layers across the entire solution.
 
 The following are requirements for the resiliency aspect:
 

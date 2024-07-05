@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-02"
+lastupdated: "2024-07-05"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -14,6 +14,8 @@ keywords:
 
 # Compute design
 {: #compute-design}
+
+IBM Power Virtual Server provides infrastrucutre by using the latest Virtual Servers in the form of Logical Partitions (LPARS). An LPAR (Logical Partition) is a way of subdividing a computer’s resources, including memory, storage, and processors, into smaller logical units. These LPARS are available and offered in different vcpu and ram ombinations that are defined by the user to meet use case requirements. 
 
 The requirements for the resiliency for {{site.data.keyword.powerSysFull}} AIX workloads pattern focus on:
 
@@ -36,9 +38,11 @@ It is advisable to avoid allocating any additional resources to the backup VPC, 
 ## Compute considerations for high availability
 {: #design-considerations-ha}
 
-The local operating system high availability method is PowerHA Standard.
+IBM PowerHA SystemMirror, formerly known as IBM PowerHA and HACMP, is an IBM solution for high-availability clusters on AIX Unix and Linux platforms. It provides near-continuous application availability with advanced failure detection, failover, and recovery capabilities. 
 
-- This allows the failover of 2 LPAR sharing the same storage volume
+In the IBM Power Virtual Server Resiliency Pattern are several compute considerations that need to be made for High Availbility:
+
+- IBM PowerHA SystemMirror Standard Edition allows the failover of 2 LPAR sharing the same storage volume
 
 - If one LPAR were to fail the second LPAR would resume the primary role and the system would continue to function as usual. 
 
@@ -47,11 +51,19 @@ The local operating system high availability method is PowerHA Standard.
 ## Compute considerations for disaster recovery
 {: #design-considerations-dr}
 
-The disaster recovery method is a secondary data center with Global Replication Service (GRS).
+IBM Global Replication Service (GRS) is a powerful solution that provides asynchronous data replication for IBM i, AIX, and Linux workloads. GRS ensures data resilience by replicating storage volumes from one IBM data center to a geographically distant IBM data center. It supports failover and failback mechanisms, allowing seamless transitions between primary and secondary sites.
+
+In the IBM Power Virtual Server Resileincy Pattern are several compute considerations that need to be made for Disaster Recovery:
+
+- The method chosen for this pattern was to deploy a seconadry site using GRS as the replication method. 
 
 - The control LPARS for GRS replication: One control LPAR (.25 cpu x 16 GB x300GB) per data center and per OS type.
+  - The control LPAR (Logical Partition) is responsible for managing GRS operations.
+  - It coordinates data sharing and replication across systems within the same SYSPLEX (a set of interconnected systems).
+  - The control LPAR ensures consistency, failover, and failback mechanisms during disaster recovery scenarios.
+  - It handles serialization, buffering, and metadata management for GRS-enabled datasets.
 
-- LPARS for Disaster Recovery Workloads
+- LPARS for Disaster Recovery Workloads at the secondary data center. 
 
 - Ensure that adequate LPARS are provisioned in the recovery location to support replicas of critical workloads if there is a disaster.
 
@@ -66,3 +78,5 @@ The disaster recovery method is a secondary data center with Global Replication 
 - Optimize the shared processor pool costs by paying for compute capacity when needed.
 
 The shared processor pool (SPP) reserves only compute capacity, not the memory. For more information, see [The shared processor pool](/docs/power-iaas?topic=power-iaas-manage-SPP) and in [Managing shared processor pools](https://www.ibm.com/docs/en/power9?topic=systems-managing-shared-processor-pools){: external}.
+
+For more information on Global Replication Service, see [GRS](/docs/power-iaas?topic=power-iaas-getting-started-GRS)

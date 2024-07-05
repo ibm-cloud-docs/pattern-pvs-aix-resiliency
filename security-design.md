@@ -15,7 +15,7 @@ keywords:
 # Security design
 {: #security-design}
 
-The following are requirements for the security aspect for the resiliency for PowerVS workloads pattern:
+The following are requirements for the security aspect for the Power Virtual server Resiliency on AIX pattern:
 
 - Ensure data encryption at rest and in transit for the storage layer.
 

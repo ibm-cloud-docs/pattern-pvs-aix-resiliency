@@ -57,9 +57,9 @@ Here are some key considerations when deploying the Secure Automated Backup with
 
 For sizing and configuration information, reach out to [Cobalt Iron support](https://www.cobaltiron.com/) For information about the methods, see [Secure Automated Backup with Compass summary](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about){: external}.
 
-- The ROI Estimator can be found [here](https://cobaltiron.valuestoryapp.com/savings-calculator/?mediafly_tco_calculator_conversion_source=site-heroslider).
+- The ROI Estimator can be found [ROI Estimator](https://cobaltiron.valuestoryapp.com/savings-calculator/?mediafly_tco_calculator_conversion_source=site-heroslider){: external}.
 
-- Rootvg restore method is required, such as mksysb stored/retrieved from Cloud Object Storage. The restored mksysb image applies the AIX configuration details while preserving the {{site.data.keyword.powerSys_notm}} deployed storage and networking resources. For more information, see [mksysb](/docs/power-iaas?topic=power-iaas-restoring-aix-mksysb-image).
+- Rootvg restore method is required, such as Make System Backup (mksysb) stored/retrieved from Cloud Object Storage. The restored mksysb image applies the AIX configuration details while preserving the {{site.data.keyword.powerSys_notm}} deployed storage and networking resources. For more information, see [mksysb](/docs/power-iaas?topic=power-iaas-restoring-aix-mksysb-image).
 
 -   Check for Secure Automated Backup with Compass [region availability](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass){: external}.
 
@@ -70,25 +70,13 @@ For sizing and configuration information, reach out to [Cobalt Iron support](htt
 ## Design considerations: High availability
 {: #ha-considerations}
 
-The local operating system high availability is PowerHA Standard Edition.
+The local operating system high availability method is PowerHA Standard Edition.
 
-- By default, {{site.data.keyword.powerSys_notm}}s are restarted on a different host system if a hardware failure occurs. PowerHA standard edition provides local clustering of “mission critical” workloads.
-
-- Clustering infrastructure provides the means of creating and managing multiple systems and system resources as a unified entity. Shared resources enable the cluster to continuously provide the essential services to users and applications. PowerHA Cluster Functions:
-
-- Heartbeat monitoring for failure detection
-
-- Activation/Release of Highly Available Services IP/s
-
-- Automatic Activation of Geographically Mirrored Volume Groups
-
-- Start/Stop/Monitor of Applications
-
-- Failover resource groups between cluster members and sites
+By default, {{site.data.keyword.powerSys_notm}}s are restarted on a different host system if a hardware failure occurs. PowerHA Standard Edition provides local clustering for ‘mission critical’ workloads. The clustering infrastructure allows you to create and manage multiple systems and system resources as a unified entity. Shared resources enable the cluster to continuously provide essential services to users and applications. Key PowerHA Cluster Functions include heartbeat monitoring for failure detection, activation/release of Highly Available Services IPs, automatic activation of geographically mirrored volume groups, and start/stop/monitor of applications. Additionally, failover resource groups can move between cluster members and sites.
 
 For more information on POWERHA, see [High availability and disaster recovery](/docs/power-iaas?topic=power-iaas-ha-dr).
 
-PowerHA supports resource optimization high availability (ROHA) for AIX instances on {{site.data.keyword.powerSys_notm}}. However, this is not discussed in this pattern ROHA is another level of automation that is built into PowerHA that might be considered. It enables clustered instances to automatically adjust central processing units (CPUs) and memory resources, which allows organizations to be more efficient in their overall use and consumption of those resources. For more information on configuring and by using ROHA with {{site.data.keyword.powerSys_notm}}, see [Resource Optimized High Availability in Cloud](/docs/en/powerha-aix/7.2?topic=administering-resources-optimized-high-availability-in-cloud).
+PowerHA supports resource optimization high availability (ROHA) for AIX instances on {{site.data.keyword.powerSys_notm}}. However, this is not discussed in this pattern ROHA is another level of automation that is built into PowerHA that might be considered. It enables clustered instances to automatically adjust central processing units (CPUs) and memory resources, which allows organizations to be more efficient in their overall use and consumption of those resources. For more information on configuring and by using ROHA with {{site.data.keyword.powerSys_notm}}, see [Resource Optimized High Availability in Cloud](https://www.ibm.com/docs/en/powerha-aix/7.2?topic=administering-resources-optimized-high-availability-in-cloud){: external}.
 
 The following figure shows a configuration that uses PowerHA Standard Edition.
 
@@ -101,7 +89,7 @@ In this configuration, both nodes have simultaneous access to the shared disks a
 
 Secondary data center with Global Replication Service (GRS)
 
-The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default. When an LPAR has an outage within the service, it automatically attempts to restart that LPAR on a separate host. For a Tier 3 SLA of 99.99%, the workload is distributed across two data centers. Supporting a 1 hour RTO and 1 hour RPO, the solution that is described in this pattern includes:
+The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default. When an Logical Partition (LPAR) has an outage within the service, it automatically attempts to restart that LPAR on a separate host. For a Tier 3 SLA of 99.99%, the workload is distributed across two data centers. Supporting a 1 hour RTO and 1 hour RPO, the solution that is described in this pattern includes:
 
 - Secondary data center
 

@@ -15,7 +15,7 @@ keywords:
 # Compute design
 {: #compute-design}
 
-IBM Power Virtual Server provides infrastrucutre by using the latest Virtual Servers in the form of Logical Partitions (LPARS). An LPAR (Logical Partition) is a way of subdividing a computer’s resources, including memory, storage, and processors, into smaller logical units. These LPARS are available and offered in different vcpu and ram ombinations that are defined by the user to meet use case requirements. 
+{{site.data.keyword.powerSysFull}} provides infrastrucutre by using the latest Virtual Servers in the form of Logical Partitions (LPARS). An LPAR (Logical Partition) is a way of subdividing a computer’s resources, including memory, storage, and processors, into smaller logical units. These LPARS are available and offered in different vcpu and ram ombinations that are defined by the user to meet use case requirements. 
 
 The requirements for the resiliency for {{site.data.keyword.powerSysFull}} AIX workloads pattern focus on:
 
@@ -38,11 +38,11 @@ It is advisable to avoid allocating any additional resources to the backup VPC, 
 ## Compute considerations for high availability
 {: #design-considerations-ha}
 
-IBM PowerHA SystemMirror, formerly known as IBM PowerHA and HACMP, is an IBM solution for high-availability clusters on AIX Unix and Linux platforms. It provides near-continuous application availability with advanced failure detection, failover, and recovery capabilities. 
+{{site.data.keyword.IBM_notm}} PowerHA SystemMirror, formerly known as {{site.data.keyword.IBM_notm}} PowerHA and HACMP, is an {{site.data.keyword.IBM_notm}} solution for high-availability clusters on AIX Unix and Linux platforms. It provides near-continuous application availability with advanced failure detection, failover, and recovery capabilities. 
 
-In the IBM Power Virtual Server Resiliency Pattern are several compute considerations that need to be made for High Availbility:
+In the {{site.data.keyword.powerSysFull}} Resiliency Pattern are several compute considerations that need to be made for High Availbility:
 
-- IBM PowerHA SystemMirror Standard Edition allows the failover of 2 LPAR sharing the same storage volume
+- {{site.data.keyword.IBM_notm}} PowerHA SystemMirror Standard Edition allows the failover of 2 LPAR sharing the same storage volume
 
 - If one LPAR were to fail the second LPAR would resume the primary role and the system would continue to function as usual. 
 
@@ -51,9 +51,9 @@ In the IBM Power Virtual Server Resiliency Pattern are several compute considera
 ## Compute considerations for disaster recovery
 {: #design-considerations-dr}
 
-IBM Global Replication Service (GRS) is a powerful solution that provides asynchronous data replication for IBM i, AIX, and Linux workloads. GRS ensures data resilience by replicating storage volumes from one IBM data center to a geographically distant IBM data center. It supports failover and failback mechanisms, allowing seamless transitions between primary and secondary sites.
+{{site.data.keyword.IBM_notm}} Global Replication Service (GRS) is a powerful solution that provides asynchronous data replication for {{site.data.keyword.IBM_notm}} i, AIX, and Linux workloads. GRS ensures data resilience by replicating storage volumes from one {{site.data.keyword.IBM_notm}} data center to a geographically distant {{site.data.keyword.IBM_notm}} data center. It supports failover and failback mechanisms, allowing seamless transitions between primary and secondary sites.
 
-In the IBM Power Virtual Server Resileincy Pattern are several compute considerations that need to be made for Disaster Recovery:
+In the {{site.data.keyword.powerSysFull}} Resileincy Pattern are several compute considerations that need to be made for Disaster Recovery:
 
 - The method chosen for this pattern was to deploy a seconadry site using GRS as the replication method. 
 

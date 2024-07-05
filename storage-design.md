@@ -17,7 +17,7 @@ keywords:
 
 
 
-Ensuring storage resiliency for IBM Power Virtual Server for AIX involves having sufficient storage capacity to accommodate high availability, backup, and disaster recovery workloads. End users must carefully consider and understand the storage types and requirements that need to be met.
+Ensuring storage resiliency for {{site.data.keyword.powerSysFull}} for AIX involves having sufficient storage capacity to accommodate high availability, backup, and disaster recovery workloads. End users must carefully consider and understand the storage types and requirements that need to be met.
 
 The requirements for the compute aspect for the Resiliency for PowerVS for AIX workloads pattern focus on:
 

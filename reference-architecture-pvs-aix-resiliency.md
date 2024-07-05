@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-02"
+lastupdated: "2024-07-05"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -23,19 +23,19 @@ content-type: reference-architecture
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Power Virtual Server resiliency on AIX
+# {{site.data.keyword.powerSysFull}} resiliency on AIX
 {: #power-virtual-server-on-AIX}
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.0"}
 
 This is a baseline solution pattern containing the design and architecture decisions for a PowerVS resiliency solution for AIX workloads to meet common requirements as noted in this use case. Actual solutions depend on the specific requirements that are set by the client. Review the following summary of the use case for this reference architecture:
 
-![AIX resiliency summary](/images/usecase.svg "Reference Summary"){: caption="Figure 1. Reference Architecture Summary for Deploying Resilient AIX workloads on Power Virtual Server" caption-side="bottom"}{: external download="usecase.svg"}
+![AIX resiliency summary](/images/usecase.svg "Reference Summary"){: caption="Figure 1. Reference Architecture Summary for Deploying Resilient AIX workloads on {{site.data.keyword.powerSysFull}}" caption-side="bottom"}{: external download="usecase.svg"}
 
 ## Architecture diagram
 {: #architecture-diagram}
 
-![AIX reference architecture](/images/resiliencypvsarchnumbered.svg "Resiliency Architecture Diagram"){: caption="Figure 2. Deploying resilient AIX workloads on Power Virtual Server reference architecture" caption-side="bottom"}{: external download="resiliencypvsarchnumbered.svg"}
+![AIX reference architecture](/images/resiliencypvsarchnumbered.svg "Resiliency Architecture Diagram"){: caption="Figure 2. Deploying resilient AIX workloads on {{site.data.keyword.powerSysFull}} reference architecture" caption-side="bottom"}{: external download="resiliencypvsarchnumbered.svg"}
 
 Review the environments that are related to this reference architecture:
 
@@ -44,7 +44,7 @@ Review the environments that are related to this reference architecture:
 3. The transit gateway connects to managment VPC, which hosts your Next Generation Firewall, management subnets for your bastion hosts, and your Virtual Private Endpoint.
 4. Backup as a Service VPC is deployed as part of the backup service automation not for workloads.
 5. The Cobalt Iron VPE instance then communicates to the Cobalt Iron SaaS {{site.data.keyword.Bluemix_notm}} service.
-6. PowerVS workspace is deployed within the Power Virtual Server environment and connects to the Power Edge Router (PER).
+6. PowerVS workspace is deployed within the {{site.data.keyword.powerSysFull}} environment and connects to the Power Edge Router (PER).
 7. A local Power high availability standard cluster is then deployed within the workspace to provide local clustering.
 8. The management and workload VPC mentioned from the primary site is also deployed in disaster recovery.
 9. Global Replication Service (GRS) is deployed as part of Disaster Recovery Storage Area Network to Storage Area Network replication.

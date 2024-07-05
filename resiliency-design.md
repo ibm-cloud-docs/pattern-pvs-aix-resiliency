@@ -40,7 +40,7 @@ Global Replication Services: Review the [Locations](/docs/power-iaas?topic=power
 ## Resiliency Design Considerations for Backup
 {: #backup-considerations}
 
-The Secure Automated Backup with Compass is a fully IBM managed backup solution for AIX workloads.
+The Secure Automated Backup with Compass is a fully {{site.data.keyword.cloud_notm}} managed backup solution for AIX workloads.
 
 Here are some key considerations when deploying the Secure Automated Backup with Cobalt solution:
 
@@ -53,7 +53,7 @@ Here are some key considerations when deploying the Secure Automated Backup with
 - By default, there are 2 copies of data - one in each MZR, service is setup in pairs; validate Secure Automated Backup with Compass [data center pairings](/docs/power-iaas?topic=power-iaas-backup-strategies#baas-dcs).
 - Replication frequency: The daily replication is based on the local time zone.
 
-- This third-party product is provided by a vendor outside of IBM and is subject to a separate agreement between you and the third party if you accept their terms. IBM is not responsible for the product and makes no privacy, security, performance, support, or other commitments regarding the product.
+- This third-party product is provided by a vendor outside of {{site.data.keyword.cloud_notm}} and is subject to a separate agreement between you and the third party if you accept their terms. {{site.data.keyword.cloud_notm}} is not responsible for the product and makes no privacy, security, performance, support, or other commitments regarding the product.
 
 For sizing and configuration information, reach out to [Cobalt Iron support](https://www.cobaltiron.com/) For information about the methods, see [Secure Automated Backup with Compass summary](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass\#about){: external}.
 
@@ -63,7 +63,7 @@ For sizing and configuration information, reach out to [Cobalt Iron support](htt
 
 -   Check for Secure Automated Backup with Compass [region availability](https://cloud.ibm.com/catalog/services/secure-automated-backup-with-compass){: external}.
 
-- The Compass Commander UI is in the IBM cloud and accessible from the IBM cloud. It is external to the VPC, SSO enabled.
+- The Compass Commander UI is in the {{site.data.keyword.cloud_notm}} and accessible from the {{site.data.keyword.cloud_notm}} cloud. It is external to the VPC, SSO enabled.
 
 ![Baas](images/baas.svg "Baas Diagram"){: caption="Figure 1: Secure Automated Backup with Compass" caption-side="bottom"}{: external download="baas.svg"}
 
@@ -105,9 +105,9 @@ The Power Systems Virtual Server service provides a Tier 2 99.95% SLA by default
 
 - Secondary data center
 
-- SAN to SAN replication paired between two IBM {{site.data.keyword.powerSys_notm}} (PowerVS) workspaces in different data centers.
+- SAN to SAN replication paired between two {{site.data.keyword.IBM_notm}} {{site.data.keyword.powerSys_notm}} (PowerVS) workspaces in different data centers.
 
-- Global Replication services (GRS) are based on industry standards IBM Storwize Global Mirror Change Volume Asynchronous replication technology. For more information, see [getting started with GRS](/docs/power-iaas?topic=power-iaas-getting-started-GRS).
+- Global Replication services (GRS) are based on industry standards {{site.data.keyword.IBM_notm}} Storwize Global Mirror Change Volume Asynchronous replication technology. For more information, see [getting started with GRS](/docs/power-iaas?topic=power-iaas-getting-started-GRS).
 
 The GRS involves two sites, over 300 km apart, where storage replication is enabled. These two sites are fixed and mapped into a one-to-one relationship mode in both directions. These two sites are fixed and are in replication partnership in both directions. You can create a replication-enabled volume from any site, the site from where the request is initiated contains the main volume and play the role of primary. The remote site is auxiliary and contains an auxiliary volume.
 
@@ -123,13 +123,13 @@ Review the key capabilities for disaster recovery design considerations:
 
 When a write operation is issued to a source volume, the changes are typically propagated to the target volume a few seconds after the data is written to the source volume. However, changes can occur on the source volume before the target volume verifies that it received the change. Because consistent copies of data are formed on the secondary site at set intervals, data loss is determined by the amount of time since the last consistency group was formed. If the system fails, Global Mirror might lose some data that was transmitted when the failure occurred.
 
-For more information, see [Global Replication Services Solution using IBM Power Virtual Server](https://cloud.ibm.com/media/docs/downloads/power-iaas/Global_Replication_Services_Solution_using_IBM_Power_Virtual_Server.pdf){: external}.
+For more information, see [Global Replication Services Solution using {{site.data.keyword.IBM_notm}} {{site.data.keyword.powerSys_notm}}](https://cloud.ibm.com/media/docs/downloads/power-iaas/Global_Replication_Services_Solution_using_IBM_Power_Virtual_Server.pdf){: external}.
 
-Consider the IBM Toolkit for AIX from IBM Technology Expert Labs for disaster recovery automation functions and capabilities on the IBM Cloud by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. With the Toolkit, simplify and automate operations of the disaster recovery solution. IBM Toolkit for AIX Full System Replication (AIX) enables automated disaster recovery functions and capabilities on the IBM Cloud by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. Clients can manage their DR environment that uses their existing AIX skills. Toolkit functions:
+Consider the {{site.data.keyword.IBM_notm}} Toolkit for AIX from {{site.data.keyword.IBM_notm}} Technology Expert Labs for disaster recovery automation functions and capabilities on the {{site.data.keyword.cloud_notm}} by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. With the Toolkit, simplify and automate operations of the disaster recovery solution. {{site.data.keyword.IBM_notm}} Toolkit for AIX Full System Replication (AIX) enables automated disaster recovery functions and capabilities on the {{site.data.keyword.cloud_notm}} by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. Clients can manage their DR environment that uses their existing AIX skills. Toolkit functions:
 
-    - Full System Replication for IBM AIX {{site.data.keyword.powerSys_notm}}
+    - Full System Replication for {{site.data.keyword.IBM_notm}} AIX {{site.data.keyword.powerSys_notm}}
 
-        - Replicate your data from between IBM Cloud sites
+        - Replicate your data from between {{site.data.keyword.cloud_notm}} sites
 
         - Replicate the AIX OS volumes
 
@@ -139,7 +139,7 @@ Consider the IBM Toolkit for AIX from IBM Technology Expert Labs for disaster re
 
     - Administrative Functions
 
-        - Reduce outage time by activating your application on another IBM site while performing required maintenance
+        - Reduce outage time by activating your application on another {{site.data.keyword.IBM_notm}} site while performing required maintenance
 
     - How to get started: [technologyservices@ibm.com](mailto:technologyservices@ibm.com)
 

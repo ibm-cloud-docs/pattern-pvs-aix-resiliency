@@ -67,7 +67,7 @@ When provisioned through the {{site.data.keyword.cloud_notm}} catalog, an automa
 - {{site.data.keyword.vpc_full}} (VPC) exclusive use of the backup activity (“Baas/Backup vpc”)
 - Virtual Private Endpoints (VPE) to establish a secure private network connection to the Compass backup servers.
 - A local {{site.data.keyword.tg_short}} if it does not exist. The cloud account will notify you if one does exist. 
-- The backup offering VPC and the Power Virtual Server workspaces should be in the same region and connected by using the local {{site.data.keyword.tg_short}}.
+- The backup offering VPC and the {{site.data.keyword.powerSysFull}} workspaces should be in the same region and connected by using the local {{site.data.keyword.tg_short}}.
 
 ### High availability clusters
 {: #highavailability-clusters}

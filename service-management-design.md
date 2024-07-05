@@ -47,7 +47,7 @@ Implement incident detection, notification, escalation, discovery, and declarati
 
 -   PowerHA - The primary task of PowerHA® SystemMirror® is to recognize and respond to failures. PowerHA SystemMirror uses the Cluster Aware AIX® infrastructure to monitor the activity of its network interfaces, devices, and IP labels. Monitoring connections are necessary because they enable PowerHA SystemMirror to recognize the difference between a network failure and a node failure. For instance, if connectivity on the PowerHA SystemMirror network (this network's IP labels are used in a resource group) is lost, and another TCP/IP based network, PowerHA SystemMirror recognizes the failure of its cluster network and takes recovery actions that prevent the cluster from becoming partitioned. PowerHA SystemMirror automatically monitors interfaces on TCP/IP networks, Storage area networks and Repository disks.
 
--   Secure automated backup with Compass - Alerting, notifications, and ticketing features and integration with {{site.data.keyword.cloud_notm}} Monitoring, IBM Cloud Logs and Client tools.
+-   Secure automated backup with Compass - Alerting, notifications, and ticketing features and integration with {{site.data.keyword.cloud_notm}} Monitoring, {{site.data.keyword.logs_full_notm:}} and Client tools.
 
 -   Alternatively, third party software such as Splunk and Datadog can be integrated with {{site.data.keyword.cloud_notm}} to provide security monitoring, compliance reporting, and operational intelligence.
 
@@ -57,4 +57,4 @@ References for service management for {{site.data.keyword.powerSysFull}}:
 
 - [Activity tracker](/docs/power-iaas?topic=power-iaas-at-events)
 
-Attention: {{site.data.keyword.cloudaccesstraillong}} services are deprecated and will no longer be supported as of 30 March 2025. The replacement service, IBM Cloud Logs is planned to be generally available late second quarter 2024. For more information, see [Getting started with IBM Cloud Logs](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started).{: attention}
+Attention: {{site.data.keyword.cloudaccesstraillong}} services are deprecated and will no longer be supported as of 30 March 2025. The replacement service, {{site.data.keyword.logs_full_notm:}} is planned to be generally available late second quarter 2024. For more information, see [Getting started with {{site.data.keyword.logs_full_notm:}}](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started).{: attention}

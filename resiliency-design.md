@@ -115,21 +115,17 @@ For more information, see [Global Replication Services Solution using {{site.dat
 
 Consider the {{site.data.keyword.IBM_notm}} Toolkit for AIX from {{site.data.keyword.IBM_notm}} Technology Expert Labs for disaster recovery automation functions and capabilities on the {{site.data.keyword.cloud_notm}} by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. With the Toolkit, simplify and automate operations of the disaster recovery solution. {{site.data.keyword.IBM_notm}} Toolkit for AIX Full System Replication (AIX) enables automated disaster recovery functions and capabilities on the {{site.data.keyword.cloud_notm}} by integrating {{site.data.keyword.powerSys_notm}} with the capabilities of GRS. Clients can manage their DR environment that uses their existing AIX skills. Toolkit functions:
 
-    - Full System Replication for {{site.data.keyword.IBM_notm}} AIX {{site.data.keyword.powerSys_notm}}
+- Full System Replication for {{site.data.keyword.IBM_notm}} AIX {{site.data.keyword.powerSys_notm}}
+    - Replicate your data from between {{site.data.keyword.cloud_notm}} sites
+    - Replicate the AIX OS volumes
 
-        - Replicate your data from between {{site.data.keyword.cloud_notm}} sites
+- Disaster Recovery Services
+    - Perform a VM switch by deactivating a VM from one site and activating its replicated VM on another site
 
-        - Replicate the AIX OS volumes
+- Administrative Functions
+    - Reduce outage time by activating your application on another {{site.data.keyword.IBM_notm}} site while performing required maintenance
 
-    - Disaster Recovery Services
-
-        - Perform a VM switch by deactivating a VM from one site and activating its replicated VM on another site
-
-    - Administrative Functions
-
-        - Reduce outage time by activating your application on another {{site.data.keyword.IBM_notm}} site while performing required maintenance
-
-    - How to get started: [technologyservices@ibm.com](mailto:technologyservices@ibm.com)
+- How to get started: [technologyservices@ibm.com](mailto:technologyservices@ibm.com)
 
 - To fully automate, the site and volume relationship requires PowerHA Enterprise Edition. The PowerHA GLVM Functions include:
 

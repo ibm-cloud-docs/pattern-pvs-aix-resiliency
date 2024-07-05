@@ -26,7 +26,7 @@ The following are requirements for the security aspect for the Power Virtual ser
 
 Security should be applied at all layers of the solution for defense in depth depending on requirements, for example at the network edge, VPCs, and at every compute instance as well as at the application and database layers. In addition, data should be protected both in transit and at rest according to data classification and controls should be in place to eliminate the need for direct access to the environment, and when direct access is needed, all access should be logged and monitored.
 
-It is a best practice to isolate, secure, manage, and monitor all ingress and egress traffic to the environment and to centralize these functions in a hub and spoke model through an Edge VPC. As a result, it's recommended that security and isolation are established by using a combination of Security Groups (SG), Network Access Control Lists (NACL) and routing/FW rules defined in the Edge VPC. This is in addition to the cloud account-level protection provided in {{site.data.keyword.cloud_notm}} Identity Services.
+It is a best practice to isolate, secure, manage, and monitor all ingress and egress traffic to the environment and to centralize these functions in a hub and spoke model through an Edge VPC. As a result, it's recommended that security and isolation are established by using a combination of Security Groups (SG), Network Access Control Lists (NACL) and routing/firewall rules defined in the Edge VPC. This is in addition to the cloud account-level protection provided in {{site.data.keyword.cloud_notm}} Identity Services.
 
 Consider the following:
 

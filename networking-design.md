@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-05"
+lastupdated: "2024-07-08"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -15,7 +15,7 @@ keywords:
 # Network design
 {: #network-design}
 
-Network design is a critical component of resilient architecture. It helps determine how the aspects of my solution are connected and how they communicate. This includes what types of network connections are needed for replication as well as how bandwidth and distance requirements effect my network latency. This section explores the types of networking aspects to consider when applying network design to resliency. 
+Network design plays a crucial role in creating resilient architecture. It defines how different components of a solution connect and communicate. This involves selecting the right network connections for replication and considering how bandwidth and distance impact network latency. In this section, we explore key networking aspects to consider when applying network design for resilience. 
 
 This resiliency pattern uses a two-region deployment for disaster recovery. The requirements for the network aspect for the resiliency on {{site.data.keyword.powerSysShort}} workloads pattern focus on:
 

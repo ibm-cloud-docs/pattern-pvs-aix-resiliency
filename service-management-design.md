@@ -12,7 +12,7 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Service Managment Design
+# Service Management Design
 {: #service-managment-design}
 
 
@@ -31,7 +31,7 @@ Operations management is a key aspect of building resilient applications. The fo
 
 Monitoring the health of solution components, cloud services, applications, and operational logs is crucial for maintaining enterprise application availability. Through proper operational monitoring, you can determine whether a failover to an alternate site is necessary, or if operations have normalized following a system disruption.
 
-Equally important is to track and monitor all activity that is performed on the {{site.data.keyword.cloud_notm}} to detect changes and potential security threats that might impact the availability of the applications that are deployed on {{site.data.keyword.cloud_notm}}.
+It’s vital to monitor {{site.data.keyword.cloud_notm}} activity for changes and potential threats that could affect application availability.
 
 Implement incident detection, notification, escalation, discovery, and declaration to provide realistic, achievable objectives that add business value.
 
@@ -43,15 +43,15 @@ Implement incident detection, notification, escalation, discovery, and declarati
 
 -   Configure {{site.data.keyword.monitoringlong_notm}}, {{site.data.keyword.logs_full_notm}}, and {{site.data.keyword.cloudaccesstraillong_notm}} to set up alerts, send notifications, and trigger actions in response to the alerts.
 
--   Use [{{site.data.keyword.en_full_notm}}](https://cloud.ibm.com/docs/event-notifications?topic=event-notifications-en-about) to route events associated with {{site.data.keyword.cloud_notm}} resources (event sources) to a destination (delivery target for a notification) to trigger actions and help automate the response to critical incidents. Define and build event notifications by linking event sources and destinations. As an example, select event sources to detect cloud provider level (for example, region, zone, services), network level (for example load balancers, global load balancers), security level, and application level critical events and integrate them with destination targets. Select destinations such as ServiceNow to collect all events and assign owners and AIOps tool to automate response to events like the file system is full.
+-   Use [{{site.data.keyword.en_full_notm}}](https://cloud.ibm.com/docs/event-notifications?topic=event-notifications-en-about) to route events associated with {{site.data.keyword.cloud_notm}} resources (event sources) to a destination (delivery target for a notification) to trigger actions and help automate the response to critical incidents. Define and build event notifications by linking event sources and destinations. For instance, choose event sources to identify critical events at cloud, network, security, and application levels, and integrate them with targets. Select destinations such as ServiceNow to collect all events and assign owners and AIOps tool to automate response to events like the file system is full.
 
--   PowerHA - The primary task of PowerHA® SystemMirror® is to recognize and respond to failures. PowerHA SystemMirror uses the Cluster Aware AIX® infrastructure to monitor the activity of its network interfaces, devices, and IP labels. Monitoring connections are necessary because they enable PowerHA SystemMirror to recognize the difference between a network failure and a node failure. For instance, if connectivity on the PowerHA SystemMirror network (this network's IP labels are used in a resource group) is lost, and another TCP/IP based network, PowerHA SystemMirror recognizes the failure of its cluster network and takes recovery actions that prevent the cluster from becoming partitioned. PowerHA SystemMirror automatically monitors interfaces on TCP/IP networks, Storage area networks and Repository disks.
+-   The primary task of PowerHA® SystemMirror® is to recognize and respond to failures. PowerHA SystemMirror uses the Cluster Aware AIX® infrastructure to monitor the activity of its network interfaces, devices, and IP labels. Monitoring connections are necessary because they enable PowerHA SystemMirror to recognize the difference between a network failure and a node failure. If the PowerHA SystemMirror network (whose IP labels are used in a resource group) loses connectivity, it detects the cluster network failure and takes steps to avoid cluster partitioning. PowerHA SystemMirror automatically monitors interfaces on TCP/IP networks, Storage Area Networks, and Repository disks.
 
--   Secure automated backup with Compass - Alerting, notifications, and ticketing features and integration with {{site.data.keyword.cloud_notm}} Monitoring, {{site.data.keyword.logs_full_notm}} and Client tools.
+-   Secure automated backup with Compass - Alerting, notifications, and ticketing features and integration with {{site.data.keyword.cloud_notm}} Monitoring, {{site.data.keyword.logs_full_notm}}, and Client tools.
 
--   Alternatively, third party software such as Splunk and Datadog can be integrated with {{site.data.keyword.cloud_notm}} to provide security monitoring, compliance reporting, and operational intelligence.
+-   Alternatively, third-party software such as Splunk and Datadog can be integrated with {{site.data.keyword.cloud_notm}} to provide security monitoring, compliance reporting, and operational intelligence.
 
-References for service management for {{site.data.keyword.powerSysFull}}:
+Here are some references for service management for {{site.data.keyword.powerSysFull}}.
 
 - [Monitoring metrics for {{site.data.keyword.powerSysFull}}](/docs/power-iaas?topic=power-iaas-monitor-sysdig)
 

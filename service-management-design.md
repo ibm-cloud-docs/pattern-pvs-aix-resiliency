@@ -17,19 +17,19 @@ keywords:
 
 
 
-Typically, service management tools are integrated with a centralized Service Management Ticketing System to provide a single pane of glass for all operations activities. The list of tools is based on client's needs and requirements and what level of management one wants to perform. There are general guidelines and some recommendations in the Service management Architecture decision section.
+Typically, service management tools are integrated with a centralized Service Management Ticketing System to provide a single pane of glass for all operations activities. The list of tools is based on client's needs and requirements and what level of management one wants to perform. The Service Management Architecture Decision section provides a set of general guidelines and insightful recommendations.
 
 The following are requirements for the service management aspect for the Resiliency for PowerVS workloads pattern:
 
 -   Monitor the usage and performance of the backup, high availability, and disaster recovery components.
 
-Operations management is a key aspect of building resilient applications. To support the application availability targets:
+Operations management is a key aspect of building resilient applications. The following supports the application availability targets.
 
 -   Continuously monitor the application and platform infrastructure to detect failures and degradations.
 
 -   Integrate automated monitoring with rich notification tools to automate problem resolution and enable a timely response to incidents.
 
-It is important to monitor the health of all the components of the solution, including infrastructure, cloud services, and application as well as operational logs to detect and correct issues that might affect the availability of enterprise applications. Proper operational monitoring can help you determine whether you need to fail over to an alternative site or whether operations have returned to normal after a system disruption.
+Monitoring the health of solution components, cloud services, applications, and operational logs is crucial for maintaining enterprise application availability. Through proper operational monitoring, you can determine whether a failover to an alternate site is necessary, or if operations have normalized following a system disruption.
 
 Equally important is to track and monitor all activity that is performed on the {{site.data.keyword.cloud_notm}} to detect changes and potential security threats that might impact the availability of the applications that are deployed on {{site.data.keyword.cloud_notm}}.
 

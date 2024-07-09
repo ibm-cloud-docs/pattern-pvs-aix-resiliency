@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-08"
+lastupdated: "2024-07-09"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -15,7 +15,7 @@ keywords:
 # Compute design
 {: #compute-design}
 
-{{site.data.keyword.powerSysFull}} provides infrastructure by using the latest Virtual Servers in the form of Logical Partitions (LPARS). An LPAR (Logical Partition) is a way of subdividing a computer’s resources, including memory, storage, and processors, into smaller logical units. These LPARs are available with various vCPU and RAM combinations, allowing users to define configurations that align with their specific use case requirements. 
+{{site.data.keyword.powerSysFull}} provides infrastructure by using the latest Virtual Servers in the form of Logical Partitions (LPARS). An LPAR (Logical Partition) is a way of subdividing a computer’s resources, including memory, storage, and processors, into small logical units. These LPARs are available with various vCPU and RAM combinations, allowing users to define configurations that align with their specific use case requirements. 
 
 The requirements for the resiliency for {{site.data.keyword.powerSysFull}} AIX workloads pattern focus on the following:
 

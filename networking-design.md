@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-08"
+lastupdated: "2024-07-09"
 
 subcollection: pattern-pvs-aix-resiliency
 
@@ -15,7 +15,7 @@ keywords:
 # Network design
 {: #network-design}
 
-Network design plays a crucial role in creating resilient architecture. It defines how different components of a solution connect and communicate. This involves selecting the right network connections for replication and considering how bandwidth and distance impact network latency. In this section, we explore key networking aspects to consider when applying network design for resilience. 
+Network design is a pivotal element in crafting a resilient architecture. It outlines the interconnections and communication pathways among various solution components. This process entails choosing optimal network connections for replication, while also taking into account the effects of bandwidth and distance on network latency. In this section, we delve into the essential networking considerations for enhancing resilience through effective network design.
 
 This resiliency pattern uses a two-region deployment for disaster recovery. The requirements for the network aspect for the resiliency on {{site.data.keyword.powerSysShort}} workloads pattern focus on:
 
@@ -72,4 +72,4 @@ When provisioned through the {{site.data.keyword.cloud_notm}} catalog, an automa
 ### High availability clusters
 {: #highavailability-clusters}
 
-Each {{site.data.keyword.powerSysShort}} needs its own IP, “service IP” typically on the same VLAN as the partner Power VSI. The service IP is an "extra" IP used for the application being HA'd.
+Each {{site.data.keyword.powerSysShort}} needs its own IP, “service IP” typically on the same VLAN as the partner Power VSI. The service IP is an "additional" IP used for the application being HA'd.

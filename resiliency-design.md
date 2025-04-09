@@ -32,7 +32,7 @@ Resiliency needs to be considered for both the infrastructure and application le
 
 It's important to validate what offerings are available in the regions you are deploying. Check for paired data centers and validate if they meet the deployment criteria for client-specific requirements.
 
-Secure Automated Backup with Compass: The backup offering VPC and the {{site.data.keyword.powerSys_notm}} workspaces should be in the same region and connected by using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired data centers](/docs/power-iaas?topic=power-iaas-backup-strategies#baas) 
+Secure Automated Backup with Compass: The backup offering VPC and the {{site.data.keyword.powerSys_notm}} workspaces should be in the same region and connected by using the local Transit Gateway. Check for Secure Automated Backup with Compass [paired data centers](/docs/power-iaas?topic=power-iaas-backup-strategies#baas)
 
 Global Replication Services: Review the [Locations](/docs/power-iaas?topic=power-iaas-getting-started-GRS) that support a global replication service.
 
@@ -76,7 +76,7 @@ By default, {{site.data.keyword.powerSys_notm}}s are restarted on a different ho
 
 For more information on POWERHA, see [High availability and disaster recovery](/docs/power-iaas?topic=power-iaas-ha-dr).
 
-PowerHA supports resource optimization high availability (ROHA) for AIX instances on {{site.data.keyword.powerSys_notm}}. However, this is not discussed in this pattern ROHA is another level of automation that is built into PowerHA that might be considered. It enables clustered instances to automatically adjust central processing units (CPUs) and memory resources, which allows organizations to be more efficient in their overall use and consumption of those resources. For more information on configuring and by using ROHA with {{site.data.keyword.powerSys_notm}}, see [Resource Optimized High Availability in Cloud](https://www.ibm.com/docs/en/powerha-aix/7.2?topic=administering-resources-optimized-high-availability-in-cloud){: external}.
+PowerHA supports resource optimization high availability (ROHA) for AIX instances on {{site.data.keyword.powerSys_notm}}. However, this is not discussed in this pattern ROHA is another level of automation that is built into PowerHA that might be considered. It enables clustered instances to automatically adjust central processing units (CPUs) and memory resources, which allows organizations to be more efficient in their overall use and consumption of those resources. For more information on configuring and by using ROHA with {{site.data.keyword.powerSys_notm}}, see [Resource Optimized High Availability in Cloud](https://www.ibm.com/docs/en/powerha-aix/7.2.x?topic=administering-resources-optimized-high-availability-in-cloud){: external}.
 
 The following figure shows a configuration that uses PowerHA Standard Edition.
 
@@ -139,6 +139,6 @@ Consider the {{site.data.keyword.IBM_notm}} Toolkit for AIX from {{site.data.key
 
 - Validate [data center pairings](/docs/power-iaas?topic=power-iaas-getting-started-GRS) available for global replication service.
 
-The following image illustrates the use of GRS as the DR solution between two cloud data centers. 
+The following image illustrates the use of GRS as the DR solution between two cloud data centers.
 
 ![GRS](/images/grs.svg "GRS Diagram"){: caption="Figure 3: GRS Architecture" caption-side="bottom"}{: external download="grs.svg"}

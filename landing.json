@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "title": "Power virtual server resiliency on AIX",
+    "introduction":"This is a landing page for the reference architecture that describes the deployment architecture resilient AIX workloads on Power Virtual Server using a multi-region solution on Power® Virtual Server that includes backup, high availability, and disaster recovery.",
+    "section_topics": {
+    "links": [
+      {
+        "title": "Overview",
+        "href": "/docs/pattern-pvs-aix-resiliency?topic=pattern-pvs-aix-resiliency-overview"
+      },
+      {
+        "title": "Reference Architecture",
+        "href": "/docs/pattern-pvs-aix-resiliency?topic=pattern-pvs-aix-resiliency-power-virtual-server-on-AIX"
+      },
+      {
+        "title": "Planning",
+        "href": "/docs/pattern-pvs-aix-resiliency?topic=pattern-pvs-aix-resiliency-compute-design"
+      }
+    ]
+  },
+    "section_architectures": [
+      {
+        "title": "Power virtual server resiliency on AIX",
+        "href": "/docs/pattern-pvs-aix-resiliency?topic=pattern-pvs-aix-resiliency-overview",
+        "deployable": false
+      }
+    ]
+   }
